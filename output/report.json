@@ -1,0 +1,1039 @@
+{
+  "seed": 20261009,
+  "per_world_requested": 20,
+  "attempts_per_level_limit": 500,
+  "seconds_per_world_limit": 60.0,
+  "worlds": {
+    "neon_city": {
+      "attempts": 9662,
+      "geometry_valid": 9662,
+      "strict_valid_attempts": 1,
+      "alternative_path_rejections": 9661,
+      "selected_candidates": 20,
+      "strict_pass_selected": 1,
+      "rejected_selected": 19,
+      "reasons": {},
+      "seconds": 19.203,
+      "mean_attempt_seconds": 0.002,
+      "alternative_paths_selected": 122,
+      "mean_words": 10.6,
+      "mean_turns": 49.5,
+      "unique_words_used": 53,
+      "most_repeated_words": [
+        [
+          "РАДИОСТАНЦИЯ",
+          12
+        ],
+        [
+          "ЭЛЕКТРОПОЕЗД",
+          12
+        ],
+        [
+          "СИГНАЛИЗАЦИЯ",
+          11
+        ],
+        [
+          "ВИДЕОКАМЕРА",
+          10
+        ],
+        [
+          "ВИДЕОТЕЛЕФОН",
+          10
+        ],
+        [
+          "ПЕРЕКРЕСТОК",
+          9
+        ],
+        [
+          "ВИДЕОСИГНАЛ",
+          9
+        ],
+        [
+          "АВТОСТОЯНКА",
+          7
+        ],
+        [
+          "АВТОБУС",
+          7
+        ],
+        [
+          "МОНИТОР",
+          6
+        ]
+      ],
+      "word_lengths": {
+        "7": 53,
+        "8": 27,
+        "9": 32,
+        "10": 20,
+        "11": 35,
+        "12": 45
+      },
+      "difficulty_range": [
+        0.22,
+        0.77
+      ],
+      "difficulty_buckets": {
+        "low": 4,
+        "medium": 12,
+        "high": 4
+      },
+      "theme_accuracy": "shortlist membership 100%; semantic/editorial accuracy unreviewed"
+    },
+    "cosmos": {
+      "attempts": 10000,
+      "geometry_valid": 10000,
+      "strict_valid_attempts": 0,
+      "alternative_path_rejections": 10000,
+      "selected_candidates": 20,
+      "strict_pass_selected": 0,
+      "rejected_selected": 20,
+      "reasons": {},
+      "seconds": 20.266,
+      "mean_attempt_seconds": 0.002,
+      "alternative_paths_selected": 77,
+      "mean_words": 10.75,
+      "mean_turns": 45.6,
+      "unique_words_used": 41,
+      "most_repeated_words": [
+        [
+          "ЛУНОХОД",
+          9
+        ],
+        [
+          "ПЛАНЕТА",
+          9
+        ],
+        [
+          "АСТЕРОИД",
+          8
+        ],
+        [
+          "МЕРКУРИЙ",
+          8
+        ],
+        [
+          "СПУТНИК",
+          8
+        ],
+        [
+          "РАДИОВОЛНА",
+          7
+        ],
+        [
+          "ПЛАНЕТОВЕД",
+          7
+        ],
+        [
+          "ЭКСПЕДИЦИЯ",
+          7
+        ],
+        [
+          "ОБСЕРВАТОРИЯ",
+          7
+        ],
+        [
+          "КОСМОЛОГ",
+          7
+        ]
+      ],
+      "word_lengths": {
+        "7": 26,
+        "8": 40,
+        "9": 53,
+        "10": 58,
+        "11": 15,
+        "12": 23
+      },
+      "difficulty_range": [
+        0.216,
+        0.755
+      ],
+      "difficulty_buckets": {
+        "low": 5,
+        "medium": 12,
+        "high": 3
+      },
+      "theme_accuracy": "shortlist membership 100%; semantic/editorial accuracy unreviewed"
+    },
+    "biosphere": {
+      "attempts": 9942,
+      "geometry_valid": 9942,
+      "strict_valid_attempts": 1,
+      "alternative_path_rejections": 9941,
+      "selected_candidates": 20,
+      "strict_pass_selected": 1,
+      "rejected_selected": 19,
+      "reasons": {},
+      "seconds": 19.609,
+      "mean_attempt_seconds": 0.002,
+      "alternative_paths_selected": 47,
+      "mean_words": 11.15,
+      "mean_turns": 48.05,
+      "unique_words_used": 46,
+      "most_repeated_words": [
+        [
+          "ПОЛУПУСТЫНЯ",
+          10
+        ],
+        [
+          "ПОДБЕРЕЗНИК",
+          10
+        ],
+        [
+          "ЛЕСНИЧЕСТВО",
+          9
+        ],
+        [
+          "РАСТЕНИЕВОД",
+          9
+        ],
+        [
+          "НАСЕКОМОЕ",
+          9
+        ],
+        [
+          "ОКЕАНОЛОГ",
+          8
+        ],
+        [
+          "ЛИСТВЕННИЦА",
+          8
+        ],
+        [
+          "ГЕОГРАФИЯ",
+          7
+        ],
+        [
+          "СЕМЕНОВОД",
+          7
+        ],
+        [
+          "ОДУВАНЧИК",
+          7
+        ]
+      ],
+      "word_lengths": {
+        "7": 35,
+        "8": 60,
+        "9": 51,
+        "10": 31,
+        "11": 46
+      },
+      "difficulty_range": [
+        0.241,
+        0.755
+      ],
+      "difficulty_buckets": {
+        "low": 4,
+        "medium": 14,
+        "high": 2
+      },
+      "theme_accuracy": "shortlist membership 100%; semantic/editorial accuracy unreviewed"
+    },
+    "cybercore": {
+      "attempts": 10000,
+      "geometry_valid": 10000,
+      "strict_valid_attempts": 0,
+      "alternative_path_rejections": 10000,
+      "selected_candidates": 20,
+      "strict_pass_selected": 0,
+      "rejected_selected": 20,
+      "reasons": {},
+      "seconds": 18.922,
+      "mean_attempt_seconds": 0.0019,
+      "alternative_paths_selected": 127,
+      "mean_words": 10.9,
+      "mean_turns": 48.1,
+      "unique_words_used": 46,
+      "most_repeated_words": [
+        [
+          "ЭНТРОПИЯ",
+          9
+        ],
+        [
+          "ФУНКЦИЯ",
+          9
+        ],
+        [
+          "МАТРИЦА",
+          8
+        ],
+        [
+          "ВЫЧИСЛИТЕЛЬ",
+          8
+        ],
+        [
+          "РЕГИСТР",
+          7
+        ],
+        [
+          "ЛОГАРИФМ",
+          7
+        ],
+        [
+          "ОПЕРАЦИЯ",
+          7
+        ],
+        [
+          "АЛГОРИТМ",
+          7
+        ],
+        [
+          "СИСТЕМА",
+          7
+        ],
+        [
+          "ЭЛЕКТРОНИКА",
+          7
+        ]
+      ],
+      "word_lengths": {
+        "7": 31,
+        "8": 49,
+        "9": 43,
+        "10": 41,
+        "11": 54
+      },
+      "difficulty_range": [
+        0.196,
+        0.75
+      ],
+      "difficulty_buckets": {
+        "low": 4,
+        "medium": 14,
+        "high": 2
+      },
+      "theme_accuracy": "shortlist membership 100%; semantic/editorial accuracy unreviewed"
+    }
+  },
+  "status": "experimental candidates; no editorial approval",
+  "collection_validation": {
+    "level_count": 80,
+    "defective_count": 78,
+    "levels": {
+      "1": {
+        "defects": [
+          "word[9]: 3 alternative path(s)",
+          "word[10]: 1 alternative path(s)"
+        ],
+        "alternative_paths": 4,
+        "alternative_paths_capped": false,
+        "coverage": 100
+      },
+      "3": {
+        "defects": [
+          "word[8]: 1 alternative path(s)",
+          "word[9]: 1 alternative path(s)"
+        ],
+        "alternative_paths": 2,
+        "alternative_paths_capped": false,
+        "coverage": 100
+      },
+      "4": {
+        "defects": [
+          "word[2]: 1 alternative path(s)",
+          "word[3]: 1 alternative path(s)",
+          "word[7]: 1 alternative path(s)"
+        ],
+        "alternative_paths": 3,
+        "alternative_paths_capped": false,
+        "coverage": 100
+      },
+      "5": {
+        "defects": [
+          "word[7]: 1 alternative path(s)",
+          "word[9]: 1 alternative path(s)",
+          "word[10]: 1 alternative path(s)"
+        ],
+        "alternative_paths": 3,
+        "alternative_paths_capped": false,
+        "coverage": 100
+      },
+      "6": {
+        "defects": [
+          "word[3]: 1 alternative path(s)",
+          "word[4]: 1 alternative path(s)",
+          "word[9]: 3 alternative path(s)"
+        ],
+        "alternative_paths": 5,
+        "alternative_paths_capped": false,
+        "coverage": 100
+      },
+      "7": {
+        "defects": [
+          "word[3]: 3 alternative path(s)",
+          "word[6]: 1 alternative path(s)"
+        ],
+        "alternative_paths": 4,
+        "alternative_paths_capped": false,
+        "coverage": 100
+      },
+      "8": {
+        "defects": [
+          "word[5]: 1 alternative path(s)"
+        ],
+        "alternative_paths": 1,
+        "alternative_paths_capped": false,
+        "coverage": 100
+      },
+      "9": {
+        "defects": [
+          "word[2]: 3 alternative path(s)",
+          "word[3]: 15 alternative path(s)"
+        ],
+        "alternative_paths": 18,
+        "alternative_paths_capped": false,
+        "coverage": 100
+      },
+      "10": {
+        "defects": [
+          "word[2]: 1 alternative path(s)",
+          "word[4]: 2 alternative path(s)",
+          "word[6]: 8 alternative path(s)"
+        ],
+        "alternative_paths": 11,
+        "alternative_paths_capped": false,
+        "coverage": 100
+      },
+      "11": {
+        "defects": [
+          "word[8]: 1 alternative path(s)"
+        ],
+        "alternative_paths": 1,
+        "alternative_paths_capped": false,
+        "coverage": 100
+      },
+      "12": {
+        "defects": [
+          "word[2]: 1 alternative path(s)",
+          "word[6]: 1 alternative path(s)",
+          "word[11]: 2 alternative path(s)"
+        ],
+        "alternative_paths": 4,
+        "alternative_paths_capped": false,
+        "coverage": 100
+      },
+      "13": {
+        "defects": [
+          "word[7]: 1 alternative path(s)",
+          "word[8]: 3 alternative path(s)"
+        ],
+        "alternative_paths": 4,
+        "alternative_paths_capped": false,
+        "coverage": 100
+      },
+      "14": {
+        "defects": [
+          "word[1]: 5 alternative path(s)",
+          "word[3]: 3 alternative path(s)",
+          "word[4]: 1 alternative path(s)"
+        ],
+        "alternative_paths": 9,
+        "alternative_paths_capped": false,
+        "coverage": 100
+      },
+      "15": {
+        "defects": [
+          "word[3]: 3 alternative path(s)",
+          "word[5]: 3 alternative path(s)"
+        ],
+        "alternative_paths": 6,
+        "alternative_paths_capped": false,
+        "coverage": 100
+      },
+      "16": {
+        "defects": [
+          "word[1]: 17 alternative path(s)",
+          "word[6]: 7 alternative path(s)",
+          "word[7]: 5 alternative path(s)"
+        ],
+        "alternative_paths": 29,
+        "alternative_paths_capped": false,
+        "coverage": 100
+      },
+      "17": {
+        "defects": [
+          "word[0]: 1 alternative path(s)",
+          "word[5]: 1 alternative path(s)"
+        ],
+        "alternative_paths": 2,
+        "alternative_paths_capped": false,
+        "coverage": 100
+      },
+      "18": {
+        "defects": [
+          "word[6]: 1 alternative path(s)",
+          "word[8]: 3 alternative path(s)"
+        ],
+        "alternative_paths": 4,
+        "alternative_paths_capped": false,
+        "coverage": 100
+      },
+      "19": {
+        "defects": [
+          "word[1]: 3 alternative path(s)"
+        ],
+        "alternative_paths": 3,
+        "alternative_paths_capped": false,
+        "coverage": 100
+      },
+      "20": {
+        "defects": [
+          "word[2]: 4 alternative path(s)",
+          "word[7]: 5 alternative path(s)"
+        ],
+        "alternative_paths": 9,
+        "alternative_paths_capped": false,
+        "coverage": 100
+      },
+      "101": {
+        "defects": [
+          "word[0]: 1 alternative path(s)",
+          "word[2]: 1 alternative path(s)",
+          "word[5]: 2 alternative path(s)"
+        ],
+        "alternative_paths": 4,
+        "alternative_paths_capped": false,
+        "coverage": 100
+      },
+      "102": {
+        "defects": [
+          "word[2]: 1 alternative path(s)",
+          "word[8]: 1 alternative path(s)"
+        ],
+        "alternative_paths": 2,
+        "alternative_paths_capped": false,
+        "coverage": 100
+      },
+      "103": {
+        "defects": [
+          "word[2]: 5 alternative path(s)",
+          "word[3]: 9 alternative path(s)"
+        ],
+        "alternative_paths": 14,
+        "alternative_paths_capped": false,
+        "coverage": 100
+      },
+      "104": {
+        "defects": [
+          "word[1]: 1 alternative path(s)",
+          "word[9]: 1 alternative path(s)",
+          "word[10]: 1 alternative path(s)"
+        ],
+        "alternative_paths": 3,
+        "alternative_paths_capped": false,
+        "coverage": 100
+      },
+      "105": {
+        "defects": [
+          "word[2]: 3 alternative path(s)"
+        ],
+        "alternative_paths": 3,
+        "alternative_paths_capped": false,
+        "coverage": 100
+      },
+      "106": {
+        "defects": [
+          "word[2]: 1 alternative path(s)",
+          "word[4]: 1 alternative path(s)",
+          "word[5]: 1 alternative path(s)"
+        ],
+        "alternative_paths": 3,
+        "alternative_paths_capped": false,
+        "coverage": 100
+      },
+      "107": {
+        "defects": [
+          "word[2]: 3 alternative path(s)",
+          "word[3]: 4 alternative path(s)"
+        ],
+        "alternative_paths": 7,
+        "alternative_paths_capped": false,
+        "coverage": 100
+      },
+      "108": {
+        "defects": [
+          "word[5]: 1 alternative path(s)"
+        ],
+        "alternative_paths": 1,
+        "alternative_paths_capped": false,
+        "coverage": 100
+      },
+      "109": {
+        "defects": [
+          "word[5]: 1 alternative path(s)",
+          "word[7]: 1 alternative path(s)"
+        ],
+        "alternative_paths": 2,
+        "alternative_paths_capped": false,
+        "coverage": 100
+      },
+      "110": {
+        "defects": [
+          "word[4]: 1 alternative path(s)",
+          "word[5]: 1 alternative path(s)"
+        ],
+        "alternative_paths": 2,
+        "alternative_paths_capped": false,
+        "coverage": 100
+      },
+      "111": {
+        "defects": [
+          "word[3]: 1 alternative path(s)"
+        ],
+        "alternative_paths": 1,
+        "alternative_paths_capped": false,
+        "coverage": 100
+      },
+      "112": {
+        "defects": [
+          "word[0]: 5 alternative path(s)",
+          "word[1]: 2 alternative path(s)"
+        ],
+        "alternative_paths": 7,
+        "alternative_paths_capped": false,
+        "coverage": 100
+      },
+      "113": {
+        "defects": [
+          "word[4]: 1 alternative path(s)",
+          "word[5]: 1 alternative path(s)",
+          "word[8]: 1 alternative path(s)"
+        ],
+        "alternative_paths": 3,
+        "alternative_paths_capped": false,
+        "coverage": 100
+      },
+      "114": {
+        "defects": [
+          "word[1]: 1 alternative path(s)",
+          "word[6]: 2 alternative path(s)",
+          "word[8]: 1 alternative path(s)"
+        ],
+        "alternative_paths": 4,
+        "alternative_paths_capped": false,
+        "coverage": 100
+      },
+      "115": {
+        "defects": [
+          "word[3]: 3 alternative path(s)",
+          "word[8]: 1 alternative path(s)"
+        ],
+        "alternative_paths": 4,
+        "alternative_paths_capped": false,
+        "coverage": 100
+      },
+      "116": {
+        "defects": [
+          "word[4]: 2 alternative path(s)",
+          "word[9]: 1 alternative path(s)"
+        ],
+        "alternative_paths": 3,
+        "alternative_paths_capped": false,
+        "coverage": 100
+      },
+      "117": {
+        "defects": [
+          "word[2]: 1 alternative path(s)",
+          "word[10]: 1 alternative path(s)"
+        ],
+        "alternative_paths": 2,
+        "alternative_paths_capped": false,
+        "coverage": 100
+      },
+      "118": {
+        "defects": [
+          "word[0]: 1 alternative path(s)",
+          "word[2]: 4 alternative path(s)"
+        ],
+        "alternative_paths": 5,
+        "alternative_paths_capped": false,
+        "coverage": 100
+      },
+      "119": {
+        "defects": [
+          "word[0]: 1 alternative path(s)",
+          "word[3]: 1 alternative path(s)",
+          "word[6]: 1 alternative path(s)"
+        ],
+        "alternative_paths": 3,
+        "alternative_paths_capped": false,
+        "coverage": 100
+      },
+      "120": {
+        "defects": [
+          "word[0]: 2 alternative path(s)",
+          "word[1]: 1 alternative path(s)",
+          "word[4]: 1 alternative path(s)"
+        ],
+        "alternative_paths": 4,
+        "alternative_paths_capped": false,
+        "coverage": 100
+      },
+      "201": {
+        "defects": [
+          "word[4]: 1 alternative path(s)",
+          "word[7]: 1 alternative path(s)"
+        ],
+        "alternative_paths": 2,
+        "alternative_paths_capped": false,
+        "coverage": 100
+      },
+      "202": {
+        "defects": [
+          "word[4]: 1 alternative path(s)",
+          "word[8]: 3 alternative path(s)"
+        ],
+        "alternative_paths": 4,
+        "alternative_paths_capped": false,
+        "coverage": 100
+      },
+      "203": {
+        "defects": [
+          "word[2]: 1 alternative path(s)",
+          "word[6]: 1 alternative path(s)"
+        ],
+        "alternative_paths": 2,
+        "alternative_paths_capped": false,
+        "coverage": 100
+      },
+      "204": {
+        "defects": [
+          "word[1]: 1 alternative path(s)",
+          "word[10]: 1 alternative path(s)"
+        ],
+        "alternative_paths": 2,
+        "alternative_paths_capped": false,
+        "coverage": 100
+      },
+      "205": {
+        "defects": [
+          "word[3]: 1 alternative path(s)",
+          "word[8]: 1 alternative path(s)"
+        ],
+        "alternative_paths": 2,
+        "alternative_paths_capped": false,
+        "coverage": 100
+      },
+      "206": {
+        "defects": [
+          "word[11]: 2 alternative path(s)",
+          "word[12]: 1 alternative path(s)"
+        ],
+        "alternative_paths": 3,
+        "alternative_paths_capped": false,
+        "coverage": 100
+      },
+      "207": {
+        "defects": [
+          "word[9]: 2 alternative path(s)"
+        ],
+        "alternative_paths": 2,
+        "alternative_paths_capped": false,
+        "coverage": 100
+      },
+      "209": {
+        "defects": [
+          "word[1]: 1 alternative path(s)",
+          "word[5]: 3 alternative path(s)"
+        ],
+        "alternative_paths": 4,
+        "alternative_paths_capped": false,
+        "coverage": 100
+      },
+      "210": {
+        "defects": [
+          "word[3]: 1 alternative path(s)"
+        ],
+        "alternative_paths": 1,
+        "alternative_paths_capped": false,
+        "coverage": 100
+      },
+      "211": {
+        "defects": [
+          "word[4]: 1 alternative path(s)"
+        ],
+        "alternative_paths": 1,
+        "alternative_paths_capped": false,
+        "coverage": 100
+      },
+      "212": {
+        "defects": [
+          "word[0]: 1 alternative path(s)",
+          "word[9]: 1 alternative path(s)",
+          "word[10]: 1 alternative path(s)"
+        ],
+        "alternative_paths": 3,
+        "alternative_paths_capped": false,
+        "coverage": 100
+      },
+      "213": {
+        "defects": [
+          "word[7]: 7 alternative path(s)",
+          "word[10]: 1 alternative path(s)"
+        ],
+        "alternative_paths": 8,
+        "alternative_paths_capped": false,
+        "coverage": 100
+      },
+      "214": {
+        "defects": [
+          "word[6]: 1 alternative path(s)",
+          "word[10]: 1 alternative path(s)"
+        ],
+        "alternative_paths": 2,
+        "alternative_paths_capped": false,
+        "coverage": 100
+      },
+      "215": {
+        "defects": [
+          "word[6]: 3 alternative path(s)"
+        ],
+        "alternative_paths": 3,
+        "alternative_paths_capped": false,
+        "coverage": 100
+      },
+      "216": {
+        "defects": [
+          "word[2]: 1 alternative path(s)"
+        ],
+        "alternative_paths": 1,
+        "alternative_paths_capped": false,
+        "coverage": 100
+      },
+      "217": {
+        "defects": [
+          "word[7]: 1 alternative path(s)"
+        ],
+        "alternative_paths": 1,
+        "alternative_paths_capped": false,
+        "coverage": 100
+      },
+      "218": {
+        "defects": [
+          "word[5]: 1 alternative path(s)"
+        ],
+        "alternative_paths": 1,
+        "alternative_paths_capped": false,
+        "coverage": 100
+      },
+      "219": {
+        "defects": [
+          "word[1]: 3 alternative path(s)"
+        ],
+        "alternative_paths": 3,
+        "alternative_paths_capped": false,
+        "coverage": 100
+      },
+      "220": {
+        "defects": [
+          "word[3]: 1 alternative path(s)",
+          "word[11]: 1 alternative path(s)"
+        ],
+        "alternative_paths": 2,
+        "alternative_paths_capped": false,
+        "coverage": 100
+      },
+      "301": {
+        "defects": [
+          "word[5]: 5 alternative path(s)",
+          "word[7]: 1 alternative path(s)"
+        ],
+        "alternative_paths": 6,
+        "alternative_paths_capped": false,
+        "coverage": 100
+      },
+      "302": {
+        "defects": [
+          "word[4]: 1 alternative path(s)",
+          "word[8]: 3 alternative path(s)"
+        ],
+        "alternative_paths": 4,
+        "alternative_paths_capped": false,
+        "coverage": 100
+      },
+      "303": {
+        "defects": [
+          "word[0]: 20+ alternative path(s)",
+          "word[1]: 1 alternative path(s)",
+          "word[7]: 2 alternative path(s)"
+        ],
+        "alternative_paths": 23,
+        "alternative_paths_capped": true,
+        "coverage": 100
+      },
+      "304": {
+        "defects": [
+          "word[2]: 1 alternative path(s)",
+          "word[3]: 1 alternative path(s)",
+          "word[5]: 3 alternative path(s)"
+        ],
+        "alternative_paths": 5,
+        "alternative_paths_capped": false,
+        "coverage": 100
+      },
+      "305": {
+        "defects": [
+          "word[0]: 3 alternative path(s)",
+          "word[4]: 1 alternative path(s)",
+          "word[9]: 2 alternative path(s)"
+        ],
+        "alternative_paths": 6,
+        "alternative_paths_capped": false,
+        "coverage": 100
+      },
+      "306": {
+        "defects": [
+          "word[2]: 1 alternative path(s)",
+          "word[5]: 1 alternative path(s)",
+          "word[8]: 1 alternative path(s)"
+        ],
+        "alternative_paths": 3,
+        "alternative_paths_capped": false,
+        "coverage": 100
+      },
+      "307": {
+        "defects": [
+          "word[2]: 2 alternative path(s)",
+          "word[3]: 1 alternative path(s)",
+          "word[10]: 1 alternative path(s)"
+        ],
+        "alternative_paths": 4,
+        "alternative_paths_capped": false,
+        "coverage": 100
+      },
+      "308": {
+        "defects": [
+          "word[0]: 1 alternative path(s)",
+          "word[4]: 1 alternative path(s)",
+          "word[5]: 1 alternative path(s)"
+        ],
+        "alternative_paths": 3,
+        "alternative_paths_capped": false,
+        "coverage": 100
+      },
+      "309": {
+        "defects": [
+          "word[2]: 1 alternative path(s)",
+          "word[5]: 1 alternative path(s)"
+        ],
+        "alternative_paths": 2,
+        "alternative_paths_capped": false,
+        "coverage": 100
+      },
+      "310": {
+        "defects": [
+          "word[1]: 1 alternative path(s)",
+          "word[5]: 1 alternative path(s)",
+          "word[7]: 9 alternative path(s)"
+        ],
+        "alternative_paths": 11,
+        "alternative_paths_capped": false,
+        "coverage": 100
+      },
+      "311": {
+        "defects": [
+          "word[1]: 1 alternative path(s)",
+          "word[5]: 2 alternative path(s)"
+        ],
+        "alternative_paths": 3,
+        "alternative_paths_capped": false,
+        "coverage": 100
+      },
+      "312": {
+        "defects": [
+          "word[2]: 1 alternative path(s)",
+          "word[6]: 1 alternative path(s)",
+          "word[7]: 7 alternative path(s)",
+          "word[10]: 1 alternative path(s)"
+        ],
+        "alternative_paths": 10,
+        "alternative_paths_capped": false,
+        "coverage": 100
+      },
+      "313": {
+        "defects": [
+          "word[2]: 1 alternative path(s)",
+          "word[6]: 1 alternative path(s)",
+          "word[8]: 1 alternative path(s)"
+        ],
+        "alternative_paths": 3,
+        "alternative_paths_capped": false,
+        "coverage": 100
+      },
+      "314": {
+        "defects": [
+          "word[6]: 4 alternative path(s)",
+          "word[7]: 2 alternative path(s)",
+          "word[8]: 2 alternative path(s)"
+        ],
+        "alternative_paths": 8,
+        "alternative_paths_capped": false,
+        "coverage": 100
+      },
+      "315": {
+        "defects": [
+          "word[0]: 8 alternative path(s)",
+          "word[7]: 1 alternative path(s)",
+          "word[8]: 1 alternative path(s)"
+        ],
+        "alternative_paths": 10,
+        "alternative_paths_capped": false,
+        "coverage": 100
+      },
+      "316": {
+        "defects": [
+          "word[4]: 1 alternative path(s)",
+          "word[5]: 1 alternative path(s)",
+          "word[6]: 3 alternative path(s)",
+          "word[10]: 1 alternative path(s)"
+        ],
+        "alternative_paths": 6,
+        "alternative_paths_capped": false,
+        "coverage": 100
+      },
+      "317": {
+        "defects": [
+          "word[2]: 1 alternative path(s)",
+          "word[7]: 1 alternative path(s)",
+          "word[8]: 1 alternative path(s)"
+        ],
+        "alternative_paths": 3,
+        "alternative_paths_capped": false,
+        "coverage": 100
+      },
+      "318": {
+        "defects": [
+          "word[1]: 1 alternative path(s)",
+          "word[3]: 1 alternative path(s)",
+          "word[9]: 3 alternative path(s)"
+        ],
+        "alternative_paths": 5,
+        "alternative_paths_capped": false,
+        "coverage": 100
+      },
+      "319": {
+        "defects": [
+          "word[2]: 1 alternative path(s)",
+          "word[4]: 1 alternative path(s)",
+          "word[8]: 1 alternative path(s)",
+          "word[11]: 1 alternative path(s)"
+        ],
+        "alternative_paths": 4,
+        "alternative_paths_capped": false,
+        "coverage": 100
+      },
+      "320": {
+        "defects": [
+          "word[7]: 1 alternative path(s)",
+          "word[10]: 6 alternative path(s)",
+          "word[11]: 1 alternative path(s)"
+        ],
+        "alternative_paths": 8,
+        "alternative_paths_capped": false,
+        "coverage": 100
+      }
+    }
+  }
+}

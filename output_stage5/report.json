@@ -1,0 +1,70 @@
+{
+  "seed": 20261009,
+  "requested_per_world": 5,
+  "attempts_per_level_limit": 12,
+  "seconds_per_world_limit": 60.0,
+  "worlds": {
+    "neon_city": {
+      "gridSize": 7,
+      "attempts": 60,
+      "selected": 5,
+      "rejected": {},
+      "elapsed_seconds": 0.125
+    },
+    "cosmos": {
+      "gridSize": 8,
+      "attempts": 60,
+      "selected": 5,
+      "rejected": {},
+      "elapsed_seconds": 0.141
+    },
+    "biosphere": {
+      "gridSize": 9,
+      "attempts": 60,
+      "selected": 5,
+      "rejected": {},
+      "elapsed_seconds": 0.219
+    },
+    "cybercore": {
+      "gridSize": 10,
+      "attempts": 60,
+      "selected": 5,
+      "rejected": {},
+      "elapsed_seconds": 0.375
+    }
+  },
+  "status": "structurally validated test levels; editorial review pending",
+  "validation": {
+    "level_count": 20,
+    "accepted_count": 20,
+    "rejected_count": 0,
+    "levels": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": [],
+      "5": [],
+      "101": [],
+      "102": [],
+      "103": [],
+      "104": [],
+      "105": [],
+      "201": [],
+      "202": [],
+      "203": [],
+      "204": [],
+      "205": [],
+      "301": [],
+      "302": [],
+      "303": [],
+      "304": [],
+      "305": []
+    },
+    "by_world": {
+      "neon_city": 5,
+      "cosmos": 5,
+      "biosphere": 5,
+      "cybercore": 5
+    }
+  }
+}

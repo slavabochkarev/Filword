@@ -1,0 +1,113 @@
+{
+  "worlds": {
+    "neon_city": {
+      "stage2": {
+        "count": 20,
+        "mean_word_length": 9.43,
+        "mean_turns": 49.5,
+        "alternatives": 122,
+        "repeated_placements": 159,
+        "unique_words": 53,
+        "max_uses": 12,
+        "layouts": 20
+      },
+      "stage3": {
+        "count": 20,
+        "mean_word_length": 7.12,
+        "mean_turns": 32,
+        "alternatives": 309,
+        "repeated_placements": 17,
+        "unique_words": 264,
+        "max_uses": 2,
+        "layouts": 20
+      }
+    },
+    "cosmos": {
+      "stage2": {
+        "count": 20,
+        "mean_word_length": 9.3,
+        "mean_turns": 45.6,
+        "alternatives": 77,
+        "repeated_placements": 174,
+        "unique_words": 41,
+        "max_uses": 9,
+        "layouts": 20
+      },
+      "stage3": {
+        "count": 20,
+        "mean_word_length": 7.22,
+        "mean_turns": 34.05,
+        "alternatives": 315,
+        "repeated_placements": 22,
+        "unique_words": 255,
+        "max_uses": 2,
+        "layouts": 20
+      }
+    },
+    "biosphere": {
+      "stage2": {
+        "count": 20,
+        "mean_word_length": 8.97,
+        "mean_turns": 48.05,
+        "alternatives": 47,
+        "repeated_placements": 177,
+        "unique_words": 46,
+        "max_uses": 10,
+        "layouts": 20
+      },
+      "stage3": {
+        "count": 20,
+        "mean_word_length": 6.99,
+        "mean_turns": 33.7,
+        "alternatives": 472,
+        "repeated_placements": 24,
+        "unique_words": 262,
+        "max_uses": 2,
+        "layouts": 20
+      }
+    },
+    "cybercore": {
+      "stage2": {
+        "count": 20,
+        "mean_word_length": 9.17,
+        "mean_turns": 48.1,
+        "alternatives": 127,
+        "repeated_placements": 172,
+        "unique_words": 46,
+        "max_uses": 9,
+        "layouts": 20
+      },
+      "stage3": {
+        "count": 20,
+        "mean_word_length": 7.14,
+        "mean_turns": 32.85,
+        "alternatives": 534,
+        "repeated_placements": 23,
+        "unique_words": 257,
+        "max_uses": 2,
+        "layouts": 20
+      }
+    }
+  },
+  "stage2": {
+    "attempts": 39604,
+    "seconds": 78.0,
+    "strict_pass": 2
+  },
+  "stage3": {
+    "attempts": 2400,
+    "seconds": 9.438,
+    "accepted": 80,
+    "rejected": 0,
+    "warnings": 80,
+    "global_unique_words": 1017,
+    "global_max_word_uses": 2
+  },
+  "confusion_probe": {
+    "examples": 80,
+    "mean_canonical_cell_overlap": 0.466,
+    "fully_disjoint_examples": 12,
+    "quarter_or_less_overlap_examples": 16,
+    "method": "For each level choose the most spatially different alternative among up to 100 paths per word. This is a stress example, not a player probability."
+  }
+}

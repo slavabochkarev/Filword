@@ -1,0 +1,1076 @@
+{
+  "seed": 20261009,
+  "per_world_requested": 20,
+  "attempts_per_level_limit": 30,
+  "seconds_per_world_limit": 45.0,
+  "policy": "any adjacent path spelling an unfound target is accepted; canonical path is highlighted",
+  "pool": {
+    "policy": "3 thematic anchors (8-12 letters) per level; remaining words from the CrossSlow game list intersected with sk4tzR (6-7 letters); max 2 uses per word",
+    "provenance": {
+      "thematic": "stage2 experimental_lexicon.json; manual theme shortlist; Harrix/CrossSlow source tags",
+      "general": "copied CrossSlow game_words.txt intersected with copied sk4tzR list; exclusions applied"
+    },
+    "general_count": 1140,
+    "general_by_length": {
+      "6": 618,
+      "7": 522
+    },
+    "thematic_count": {
+      "neon_city": 43,
+      "cosmos": 38,
+      "biosphere": 37,
+      "cybercore": 42
+    },
+    "thematic_by_length": {
+      "neon_city": {
+        "12": 4,
+        "10": 12,
+        "11": 4,
+        "9": 14,
+        "8": 9
+      },
+      "cosmos": {
+        "10": 10,
+        "9": 13,
+        "8": 6,
+        "12": 5,
+        "11": 4
+      },
+      "biosphere": {
+        "8": 19,
+        "9": 7,
+        "10": 6,
+        "11": 5
+      },
+      "cybercore": {
+        "10": 16,
+        "11": 9,
+        "9": 10,
+        "8": 7
+      }
+    },
+    "editorial_status": "experimental; no independent manual review completed"
+  },
+  "worlds": {
+    "neon_city": {
+      "attempts": 600,
+      "structurally_valid_attempts": 600,
+      "selected": 20,
+      "rejections": {},
+      "elapsed_seconds": 2.453,
+      "mean_attempt_seconds": 0.004,
+      "mean_word_length": 7.117,
+      "mean_word_count": 14.05,
+      "mean_turns": 32,
+      "alternative_paths": 309,
+      "ambiguous_words": 137,
+      "total_word_placements": 281,
+      "unique_words": 264,
+      "repeated_placements": 17,
+      "max_word_uses": 2,
+      "word_lengths": {
+        "6": 121,
+        "7": 100,
+        "8": 11,
+        "9": 20,
+        "10": 19,
+        "11": 4,
+        "12": 6
+      },
+      "difficulty_range": [
+        0.366,
+        0.675
+      ],
+      "theme_anchors_per_level": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ]
+    },
+    "cosmos": {
+      "attempts": 600,
+      "structurally_valid_attempts": 600,
+      "selected": 20,
+      "rejections": {},
+      "elapsed_seconds": 2.485,
+      "mean_attempt_seconds": 0.0041,
+      "mean_word_length": 7.22,
+      "mean_word_count": 13.85,
+      "mean_turns": 34.05,
+      "alternative_paths": 315,
+      "ambiguous_words": 131,
+      "total_word_placements": 277,
+      "unique_words": 255,
+      "repeated_placements": 22,
+      "max_word_uses": 2,
+      "word_lengths": {
+        "6": 106,
+        "7": 111,
+        "8": 10,
+        "9": 18,
+        "10": 17,
+        "11": 5,
+        "12": 10
+      },
+      "difficulty_range": [
+        0.368,
+        0.668
+      ],
+      "theme_anchors_per_level": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ]
+    },
+    "biosphere": {
+      "attempts": 600,
+      "structurally_valid_attempts": 600,
+      "selected": 20,
+      "rejections": {},
+      "elapsed_seconds": 2.406,
+      "mean_attempt_seconds": 0.004,
+      "mean_word_length": 6.993,
+      "mean_word_count": 14.3,
+      "mean_turns": 33.7,
+      "alternative_paths": 472,
+      "ambiguous_words": 172,
+      "total_word_placements": 286,
+      "unique_words": 262,
+      "repeated_placements": 24,
+      "max_word_uses": 2,
+      "word_lengths": {
+        "6": 116,
+        "7": 110,
+        "8": 32,
+        "9": 10,
+        "10": 10,
+        "11": 8
+      },
+      "difficulty_range": [
+        0.352,
+        0.681
+      ],
+      "theme_anchors_per_level": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ]
+    },
+    "cybercore": {
+      "attempts": 600,
+      "structurally_valid_attempts": 600,
+      "selected": 20,
+      "rejections": {},
+      "elapsed_seconds": 2.094,
+      "mean_attempt_seconds": 0.0034,
+      "mean_word_length": 7.143,
+      "mean_word_count": 14,
+      "mean_turns": 32.85,
+      "alternative_paths": 534,
+      "ambiguous_words": 186,
+      "total_word_placements": 280,
+      "unique_words": 257,
+      "repeated_placements": 23,
+      "max_word_uses": 2,
+      "word_lengths": {
+        "6": 120,
+        "7": 100,
+        "8": 10,
+        "9": 12,
+        "10": 26,
+        "11": 12
+      },
+      "difficulty_range": [
+        0.363,
+        0.646
+      ],
+      "theme_anchors_per_level": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ]
+    }
+  },
+  "validation": {
+    "level_count": 80,
+    "accepted_count": 80,
+    "rejected_count": 0,
+    "warning_count": 80,
+    "global_unique_words": 1017,
+    "max_word_uses": 2,
+    "levels": {
+      "1": {
+        "errors": [],
+        "warnings": [
+          "17 alternative target paths"
+        ],
+        "alternative_paths": 17,
+        "alternatives_capped": false,
+        "coverage": 100,
+        "theme_anchors": 3
+      },
+      "2": {
+        "errors": [],
+        "warnings": [
+          "8 alternative target paths"
+        ],
+        "alternative_paths": 8,
+        "alternatives_capped": false,
+        "coverage": 100,
+        "theme_anchors": 3
+      },
+      "3": {
+        "errors": [],
+        "warnings": [
+          "5 alternative target paths"
+        ],
+        "alternative_paths": 5,
+        "alternatives_capped": false,
+        "coverage": 100,
+        "theme_anchors": 3
+      },
+      "4": {
+        "errors": [],
+        "warnings": [
+          "9 alternative target paths"
+        ],
+        "alternative_paths": 9,
+        "alternatives_capped": false,
+        "coverage": 100,
+        "theme_anchors": 3
+      },
+      "5": {
+        "errors": [],
+        "warnings": [
+          "35+ alternative target paths"
+        ],
+        "alternative_paths": 35,
+        "alternatives_capped": true,
+        "coverage": 100,
+        "theme_anchors": 3
+      },
+      "6": {
+        "errors": [],
+        "warnings": [
+          "30 alternative target paths"
+        ],
+        "alternative_paths": 30,
+        "alternatives_capped": false,
+        "coverage": 100,
+        "theme_anchors": 3
+      },
+      "7": {
+        "errors": [],
+        "warnings": [
+          "18 alternative target paths"
+        ],
+        "alternative_paths": 18,
+        "alternatives_capped": false,
+        "coverage": 100,
+        "theme_anchors": 3
+      },
+      "8": {
+        "errors": [],
+        "warnings": [
+          "19 alternative target paths"
+        ],
+        "alternative_paths": 19,
+        "alternatives_capped": false,
+        "coverage": 100,
+        "theme_anchors": 3
+      },
+      "9": {
+        "errors": [],
+        "warnings": [
+          "14 alternative target paths"
+        ],
+        "alternative_paths": 14,
+        "alternatives_capped": false,
+        "coverage": 100,
+        "theme_anchors": 3
+      },
+      "10": {
+        "errors": [],
+        "warnings": [
+          "14 alternative target paths"
+        ],
+        "alternative_paths": 14,
+        "alternatives_capped": false,
+        "coverage": 100,
+        "theme_anchors": 3
+      },
+      "11": {
+        "errors": [],
+        "warnings": [
+          "9 alternative target paths"
+        ],
+        "alternative_paths": 9,
+        "alternatives_capped": false,
+        "coverage": 100,
+        "theme_anchors": 3
+      },
+      "12": {
+        "errors": [],
+        "warnings": [
+          "10 alternative target paths"
+        ],
+        "alternative_paths": 10,
+        "alternatives_capped": false,
+        "coverage": 100,
+        "theme_anchors": 3
+      },
+      "13": {
+        "errors": [],
+        "warnings": [
+          "32 alternative target paths"
+        ],
+        "alternative_paths": 32,
+        "alternatives_capped": false,
+        "coverage": 100,
+        "theme_anchors": 3
+      },
+      "14": {
+        "errors": [],
+        "warnings": [
+          "14 alternative target paths"
+        ],
+        "alternative_paths": 14,
+        "alternatives_capped": false,
+        "coverage": 100,
+        "theme_anchors": 3
+      },
+      "15": {
+        "errors": [],
+        "warnings": [
+          "16 alternative target paths"
+        ],
+        "alternative_paths": 16,
+        "alternatives_capped": false,
+        "coverage": 100,
+        "theme_anchors": 3
+      },
+      "16": {
+        "errors": [],
+        "warnings": [
+          "13 alternative target paths"
+        ],
+        "alternative_paths": 13,
+        "alternatives_capped": false,
+        "coverage": 100,
+        "theme_anchors": 3
+      },
+      "17": {
+        "errors": [],
+        "warnings": [
+          "5 alternative target paths"
+        ],
+        "alternative_paths": 5,
+        "alternatives_capped": false,
+        "coverage": 100,
+        "theme_anchors": 3
+      },
+      "18": {
+        "errors": [],
+        "warnings": [
+          "11 alternative target paths"
+        ],
+        "alternative_paths": 11,
+        "alternatives_capped": false,
+        "coverage": 100,
+        "theme_anchors": 3
+      },
+      "19": {
+        "errors": [],
+        "warnings": [
+          "14 alternative target paths"
+        ],
+        "alternative_paths": 14,
+        "alternatives_capped": false,
+        "coverage": 100,
+        "theme_anchors": 3
+      },
+      "20": {
+        "errors": [],
+        "warnings": [
+          "16 alternative target paths"
+        ],
+        "alternative_paths": 16,
+        "alternatives_capped": false,
+        "coverage": 100,
+        "theme_anchors": 3
+      },
+      "101": {
+        "errors": [],
+        "warnings": [
+          "13 alternative target paths"
+        ],
+        "alternative_paths": 13,
+        "alternatives_capped": false,
+        "coverage": 100,
+        "theme_anchors": 3
+      },
+      "102": {
+        "errors": [],
+        "warnings": [
+          "10 alternative target paths"
+        ],
+        "alternative_paths": 10,
+        "alternatives_capped": false,
+        "coverage": 100,
+        "theme_anchors": 3
+      },
+      "103": {
+        "errors": [],
+        "warnings": [
+          "10 alternative target paths"
+        ],
+        "alternative_paths": 10,
+        "alternatives_capped": false,
+        "coverage": 100,
+        "theme_anchors": 3
+      },
+      "104": {
+        "errors": [],
+        "warnings": [
+          "7 alternative target paths"
+        ],
+        "alternative_paths": 7,
+        "alternatives_capped": false,
+        "coverage": 100,
+        "theme_anchors": 3
+      },
+      "105": {
+        "errors": [],
+        "warnings": [
+          "9 alternative target paths"
+        ],
+        "alternative_paths": 9,
+        "alternatives_capped": false,
+        "coverage": 100,
+        "theme_anchors": 3
+      },
+      "106": {
+        "errors": [],
+        "warnings": [
+          "6 alternative target paths"
+        ],
+        "alternative_paths": 6,
+        "alternatives_capped": false,
+        "coverage": 100,
+        "theme_anchors": 3
+      },
+      "107": {
+        "errors": [],
+        "warnings": [
+          "3 alternative target paths"
+        ],
+        "alternative_paths": 3,
+        "alternatives_capped": false,
+        "coverage": 100,
+        "theme_anchors": 3
+      },
+      "108": {
+        "errors": [],
+        "warnings": [
+          "14 alternative target paths"
+        ],
+        "alternative_paths": 14,
+        "alternatives_capped": false,
+        "coverage": 100,
+        "theme_anchors": 3
+      },
+      "109": {
+        "errors": [],
+        "warnings": [
+          "10 alternative target paths"
+        ],
+        "alternative_paths": 10,
+        "alternatives_capped": false,
+        "coverage": 100,
+        "theme_anchors": 3
+      },
+      "110": {
+        "errors": [],
+        "warnings": [
+          "30 alternative target paths"
+        ],
+        "alternative_paths": 30,
+        "alternatives_capped": false,
+        "coverage": 100,
+        "theme_anchors": 3
+      },
+      "111": {
+        "errors": [],
+        "warnings": [
+          "22 alternative target paths"
+        ],
+        "alternative_paths": 22,
+        "alternatives_capped": false,
+        "coverage": 100,
+        "theme_anchors": 3
+      },
+      "112": {
+        "errors": [],
+        "warnings": [
+          "28 alternative target paths"
+        ],
+        "alternative_paths": 28,
+        "alternatives_capped": false,
+        "coverage": 100,
+        "theme_anchors": 3
+      },
+      "113": {
+        "errors": [],
+        "warnings": [
+          "23 alternative target paths"
+        ],
+        "alternative_paths": 23,
+        "alternatives_capped": false,
+        "coverage": 100,
+        "theme_anchors": 3
+      },
+      "114": {
+        "errors": [],
+        "warnings": [
+          "11 alternative target paths"
+        ],
+        "alternative_paths": 11,
+        "alternatives_capped": false,
+        "coverage": 100,
+        "theme_anchors": 3
+      },
+      "115": {
+        "errors": [],
+        "warnings": [
+          "12 alternative target paths"
+        ],
+        "alternative_paths": 12,
+        "alternatives_capped": false,
+        "coverage": 100,
+        "theme_anchors": 3
+      },
+      "116": {
+        "errors": [],
+        "warnings": [
+          "16 alternative target paths"
+        ],
+        "alternative_paths": 16,
+        "alternatives_capped": false,
+        "coverage": 100,
+        "theme_anchors": 3
+      },
+      "117": {
+        "errors": [],
+        "warnings": [
+          "15 alternative target paths"
+        ],
+        "alternative_paths": 15,
+        "alternatives_capped": false,
+        "coverage": 100,
+        "theme_anchors": 3
+      },
+      "118": {
+        "errors": [],
+        "warnings": [
+          "11 alternative target paths"
+        ],
+        "alternative_paths": 11,
+        "alternatives_capped": false,
+        "coverage": 100,
+        "theme_anchors": 3
+      },
+      "119": {
+        "errors": [],
+        "warnings": [
+          "19 alternative target paths"
+        ],
+        "alternative_paths": 19,
+        "alternatives_capped": false,
+        "coverage": 100,
+        "theme_anchors": 3
+      },
+      "120": {
+        "errors": [],
+        "warnings": [
+          "46+ alternative target paths"
+        ],
+        "alternative_paths": 46,
+        "alternatives_capped": true,
+        "coverage": 100,
+        "theme_anchors": 3
+      },
+      "201": {
+        "errors": [],
+        "warnings": [
+          "13 alternative target paths"
+        ],
+        "alternative_paths": 13,
+        "alternatives_capped": false,
+        "coverage": 100,
+        "theme_anchors": 3
+      },
+      "202": {
+        "errors": [],
+        "warnings": [
+          "22 alternative target paths"
+        ],
+        "alternative_paths": 22,
+        "alternatives_capped": false,
+        "coverage": 100,
+        "theme_anchors": 3
+      },
+      "203": {
+        "errors": [],
+        "warnings": [
+          "13 alternative target paths"
+        ],
+        "alternative_paths": 13,
+        "alternatives_capped": false,
+        "coverage": 100,
+        "theme_anchors": 3
+      },
+      "204": {
+        "errors": [],
+        "warnings": [
+          "26 alternative target paths"
+        ],
+        "alternative_paths": 26,
+        "alternatives_capped": false,
+        "coverage": 100,
+        "theme_anchors": 3
+      },
+      "205": {
+        "errors": [],
+        "warnings": [
+          "13 alternative target paths"
+        ],
+        "alternative_paths": 13,
+        "alternatives_capped": false,
+        "coverage": 100,
+        "theme_anchors": 3
+      },
+      "206": {
+        "errors": [],
+        "warnings": [
+          "14 alternative target paths"
+        ],
+        "alternative_paths": 14,
+        "alternatives_capped": false,
+        "coverage": 100,
+        "theme_anchors": 3
+      },
+      "207": {
+        "errors": [],
+        "warnings": [
+          "18 alternative target paths"
+        ],
+        "alternative_paths": 18,
+        "alternatives_capped": false,
+        "coverage": 100,
+        "theme_anchors": 3
+      },
+      "208": {
+        "errors": [],
+        "warnings": [
+          "31 alternative target paths"
+        ],
+        "alternative_paths": 31,
+        "alternatives_capped": false,
+        "coverage": 100,
+        "theme_anchors": 3
+      },
+      "209": {
+        "errors": [],
+        "warnings": [
+          "21 alternative target paths"
+        ],
+        "alternative_paths": 21,
+        "alternatives_capped": false,
+        "coverage": 100,
+        "theme_anchors": 3
+      },
+      "210": {
+        "errors": [],
+        "warnings": [
+          "12 alternative target paths"
+        ],
+        "alternative_paths": 12,
+        "alternatives_capped": false,
+        "coverage": 100,
+        "theme_anchors": 3
+      },
+      "211": {
+        "errors": [],
+        "warnings": [
+          "34 alternative target paths"
+        ],
+        "alternative_paths": 34,
+        "alternatives_capped": false,
+        "coverage": 100,
+        "theme_anchors": 3
+      },
+      "212": {
+        "errors": [],
+        "warnings": [
+          "36 alternative target paths"
+        ],
+        "alternative_paths": 36,
+        "alternatives_capped": false,
+        "coverage": 100,
+        "theme_anchors": 3
+      },
+      "213": {
+        "errors": [],
+        "warnings": [
+          "23 alternative target paths"
+        ],
+        "alternative_paths": 23,
+        "alternatives_capped": false,
+        "coverage": 100,
+        "theme_anchors": 3
+      },
+      "214": {
+        "errors": [],
+        "warnings": [
+          "32 alternative target paths"
+        ],
+        "alternative_paths": 32,
+        "alternatives_capped": false,
+        "coverage": 100,
+        "theme_anchors": 3
+      },
+      "215": {
+        "errors": [],
+        "warnings": [
+          "14 alternative target paths"
+        ],
+        "alternative_paths": 14,
+        "alternatives_capped": false,
+        "coverage": 100,
+        "theme_anchors": 3
+      },
+      "216": {
+        "errors": [],
+        "warnings": [
+          "26 alternative target paths"
+        ],
+        "alternative_paths": 26,
+        "alternatives_capped": false,
+        "coverage": 100,
+        "theme_anchors": 3
+      },
+      "217": {
+        "errors": [],
+        "warnings": [
+          "48 alternative target paths"
+        ],
+        "alternative_paths": 48,
+        "alternatives_capped": false,
+        "coverage": 100,
+        "theme_anchors": 3
+      },
+      "218": {
+        "errors": [],
+        "warnings": [
+          "25 alternative target paths"
+        ],
+        "alternative_paths": 25,
+        "alternatives_capped": false,
+        "coverage": 100,
+        "theme_anchors": 3
+      },
+      "219": {
+        "errors": [],
+        "warnings": [
+          "17 alternative target paths"
+        ],
+        "alternative_paths": 17,
+        "alternatives_capped": false,
+        "coverage": 100,
+        "theme_anchors": 3
+      },
+      "220": {
+        "errors": [],
+        "warnings": [
+          "34 alternative target paths"
+        ],
+        "alternative_paths": 34,
+        "alternatives_capped": false,
+        "coverage": 100,
+        "theme_anchors": 3
+      },
+      "301": {
+        "errors": [],
+        "warnings": [
+          "11 alternative target paths"
+        ],
+        "alternative_paths": 11,
+        "alternatives_capped": false,
+        "coverage": 100,
+        "theme_anchors": 3
+      },
+      "302": {
+        "errors": [],
+        "warnings": [
+          "8 alternative target paths"
+        ],
+        "alternative_paths": 8,
+        "alternatives_capped": false,
+        "coverage": 100,
+        "theme_anchors": 3
+      },
+      "303": {
+        "errors": [],
+        "warnings": [
+          "32 alternative target paths"
+        ],
+        "alternative_paths": 32,
+        "alternatives_capped": false,
+        "coverage": 100,
+        "theme_anchors": 3
+      },
+      "304": {
+        "errors": [],
+        "warnings": [
+          "24 alternative target paths"
+        ],
+        "alternative_paths": 24,
+        "alternatives_capped": false,
+        "coverage": 100,
+        "theme_anchors": 3
+      },
+      "305": {
+        "errors": [],
+        "warnings": [
+          "22 alternative target paths"
+        ],
+        "alternative_paths": 22,
+        "alternatives_capped": false,
+        "coverage": 100,
+        "theme_anchors": 3
+      },
+      "306": {
+        "errors": [],
+        "warnings": [
+          "71+ alternative target paths"
+        ],
+        "alternative_paths": 71,
+        "alternatives_capped": true,
+        "coverage": 100,
+        "theme_anchors": 3
+      },
+      "307": {
+        "errors": [],
+        "warnings": [
+          "23 alternative target paths"
+        ],
+        "alternative_paths": 23,
+        "alternatives_capped": false,
+        "coverage": 100,
+        "theme_anchors": 3
+      },
+      "308": {
+        "errors": [],
+        "warnings": [
+          "23 alternative target paths"
+        ],
+        "alternative_paths": 23,
+        "alternatives_capped": false,
+        "coverage": 100,
+        "theme_anchors": 3
+      },
+      "309": {
+        "errors": [],
+        "warnings": [
+          "18 alternative target paths"
+        ],
+        "alternative_paths": 18,
+        "alternatives_capped": false,
+        "coverage": 100,
+        "theme_anchors": 3
+      },
+      "310": {
+        "errors": [],
+        "warnings": [
+          "38+ alternative target paths"
+        ],
+        "alternative_paths": 38,
+        "alternatives_capped": true,
+        "coverage": 100,
+        "theme_anchors": 3
+      },
+      "311": {
+        "errors": [],
+        "warnings": [
+          "31 alternative target paths"
+        ],
+        "alternative_paths": 31,
+        "alternatives_capped": false,
+        "coverage": 100,
+        "theme_anchors": 3
+      },
+      "312": {
+        "errors": [],
+        "warnings": [
+          "39 alternative target paths"
+        ],
+        "alternative_paths": 39,
+        "alternatives_capped": false,
+        "coverage": 100,
+        "theme_anchors": 3
+      },
+      "313": {
+        "errors": [],
+        "warnings": [
+          "37 alternative target paths"
+        ],
+        "alternative_paths": 37,
+        "alternatives_capped": false,
+        "coverage": 100,
+        "theme_anchors": 3
+      },
+      "314": {
+        "errors": [],
+        "warnings": [
+          "18 alternative target paths"
+        ],
+        "alternative_paths": 18,
+        "alternatives_capped": false,
+        "coverage": 100,
+        "theme_anchors": 3
+      },
+      "315": {
+        "errors": [],
+        "warnings": [
+          "32+ alternative target paths"
+        ],
+        "alternative_paths": 32,
+        "alternatives_capped": true,
+        "coverage": 100,
+        "theme_anchors": 3
+      },
+      "316": {
+        "errors": [],
+        "warnings": [
+          "33 alternative target paths"
+        ],
+        "alternative_paths": 33,
+        "alternatives_capped": false,
+        "coverage": 100,
+        "theme_anchors": 3
+      },
+      "317": {
+        "errors": [],
+        "warnings": [
+          "18 alternative target paths"
+        ],
+        "alternative_paths": 18,
+        "alternatives_capped": false,
+        "coverage": 100,
+        "theme_anchors": 3
+      },
+      "318": {
+        "errors": [],
+        "warnings": [
+          "20 alternative target paths"
+        ],
+        "alternative_paths": 20,
+        "alternatives_capped": false,
+        "coverage": 100,
+        "theme_anchors": 3
+      },
+      "319": {
+        "errors": [],
+        "warnings": [
+          "20 alternative target paths"
+        ],
+        "alternative_paths": 20,
+        "alternatives_capped": false,
+        "coverage": 100,
+        "theme_anchors": 3
+      },
+      "320": {
+        "errors": [],
+        "warnings": [
+          "16 alternative target paths"
+        ],
+        "alternative_paths": 16,
+        "alternatives_capped": false,
+        "coverage": 100,
+        "theme_anchors": 3
+      }
+    }
+  },
+  "total_attempts": 2400,
+  "total_selected": 80,
+  "global_unique_words": 1017,
+  "global_max_word_uses": 2
+}

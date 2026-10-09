@@ -1,0 +1,2088 @@
+{
+  "schemaVersion": 1,
+  "policy": "uppercase; Ё→Е; Й retained; noun candidates; manual thematic shortlist",
+  "sources": {
+    "crossslow": {
+      "file": "data/source/crossslow_game_words.txt",
+      "sha256": "d12374aef9739ce01d70b0c63393430915dd52c58c49ad42c8f93e0800fede6d",
+      "normalized_count_3_12": 2089
+    },
+    "harrix": {
+      "file": "data/source/harrix_russian_nouns.txt",
+      "sha256": "661949699919aa968dd0033f7bdd8abbe4db09d161b565f3f0181283fd0d0da7",
+      "normalized_count_3_12": 43584
+    },
+    "sk4tzr": {
+      "file": "data/source/sk4tzr_common_nouns.txt",
+      "sha256": "973dcb01444e913a4d9467e6ec3fbad7df0b8f5d2d273e72bb8e63418cdfb96b",
+      "normalized_count_3_12": 3216
+    }
+  },
+  "words": [
+    {
+      "word": "АВТОБУС",
+      "themes": [
+        "neon_city"
+      ],
+      "sources": [
+        "crossslow",
+        "harrix",
+        "sk4tzr"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "АВТОВОКЗАЛ",
+      "themes": [
+        "neon_city"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "АВТОДОРОГА",
+      "themes": [
+        "neon_city"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "АВТОДРОМ",
+      "themes": [
+        "neon_city"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "АВТОКРАН",
+      "themes": [
+        "neon_city"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "АВТОМАТИКА",
+      "themes": [
+        "cybercore"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "АВТОМОБИЛЬ",
+      "themes": [
+        "neon_city"
+      ],
+      "sources": [
+        "harrix",
+        "sk4tzr"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "АВТОПАРК",
+      "themes": [
+        "neon_city"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "АВТОПИЛОТ",
+      "themes": [
+        "neon_city"
+      ],
+      "sources": [
+        "harrix",
+        "sk4tzr"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "АВТОПОЕЗД",
+      "themes": [
+        "neon_city"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "АВТОСАЛОН",
+      "themes": [
+        "neon_city"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "АВТОСТОЯНКА",
+      "themes": [
+        "neon_city"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "АВТОСТРАДА",
+      "themes": [
+        "neon_city"
+      ],
+      "sources": [
+        "harrix",
+        "sk4tzr"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "АВТОТРАССА",
+      "themes": [
+        "neon_city"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "АВТОФУРГОН",
+      "themes": [
+        "neon_city"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "АЛГОРИТМ",
+      "themes": [
+        "cybercore"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "АНАЛИЗАТОР",
+      "themes": [
+        "cybercore"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "АНТИРАКЕТА",
+      "themes": [
+        "cosmos"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "АРИФМЕТИКА",
+      "themes": [
+        "cybercore"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "АСТЕРОИД",
+      "themes": [
+        "cosmos"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "АСТРОГРАФ",
+      "themes": [
+        "cosmos"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "АСТРОКОМПАС",
+      "themes": [
+        "cosmos"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "АСТРОМЕТРИЯ",
+      "themes": [
+        "cosmos"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "АСТРОНАВТ",
+      "themes": [
+        "cosmos"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "АСТРОНОМИЯ",
+      "themes": [
+        "cosmos"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "АСТРОФИЗИК",
+      "themes": [
+        "cosmos"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "АСТРОФИЗИКА",
+      "themes": [
+        "cosmos"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "АТМОСФЕРА",
+      "themes": [
+        "cosmos"
+      ],
+      "sources": [
+        "harrix",
+        "sk4tzr"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "БАБОЧКА",
+      "themes": [
+        "biosphere"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "БАТАРЕЙКА",
+      "themes": [
+        "neon_city"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "БЕРЕЗНЯК",
+      "themes": [
+        "biosphere"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "БИОСФЕРА",
+      "themes": [
+        "biosphere"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "БОЛОТИНА",
+      "themes": [
+        "biosphere"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "БОТАНИКА",
+      "themes": [
+        "biosphere"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "ВИДЕОКАМЕРА",
+      "themes": [
+        "neon_city"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "ВИДЕОСИГНАЛ",
+      "themes": [
+        "neon_city"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "ВИДЕОТЕЛЕФОН",
+      "themes": [
+        "neon_city"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "ВОДОПАД",
+      "themes": [
+        "biosphere"
+      ],
+      "sources": [
+        "crossslow",
+        "harrix",
+        "sk4tzr"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "ВОДОПРОВОД",
+      "themes": [
+        "neon_city"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "ВОДОРОСЛЬ",
+      "themes": [
+        "biosphere"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "ВОРОБЕЙ",
+      "themes": [
+        "biosphere"
+      ],
+      "sources": [
+        "crossslow",
+        "harrix",
+        "sk4tzr"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "ВСЕЛЕННАЯ",
+      "themes": [
+        "cosmos"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "ВЫЧИСЛЕНИЕ",
+      "themes": [
+        "cybercore"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "ВЫЧИСЛИТЕЛЬ",
+      "themes": [
+        "cybercore"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "ГЕНЕРАТОР",
+      "themes": [
+        "neon_city",
+        "cybercore"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "ГЕОГРАФИЯ",
+      "themes": [
+        "biosphere"
+      ],
+      "sources": [
+        "harrix",
+        "sk4tzr"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "ГЕОЛОГИЯ",
+      "themes": [
+        "biosphere"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "ГОЛОГРАММА",
+      "themes": [
+        "cybercore"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "ГРАВИТАЦИЯ",
+      "themes": [
+        "cosmos"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "ГРИБНИЦА",
+      "themes": [
+        "biosphere"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "ДЕЛЬФИН",
+      "themes": [
+        "biosphere"
+      ],
+      "sources": [
+        "crossslow",
+        "harrix",
+        "sk4tzr"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "ДЕШИФРАТОР",
+      "themes": [
+        "cybercore"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "ДЕШИФРОВКА",
+      "themes": [
+        "cybercore"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "ДИАГРАММА",
+      "themes": [
+        "cybercore"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "ДИНОЗАВР",
+      "themes": [
+        "biosphere"
+      ],
+      "sources": [
+        "harrix",
+        "sk4tzr"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "ДИСПЛЕЙ",
+      "themes": [
+        "neon_city"
+      ],
+      "sources": [
+        "crossslow",
+        "harrix",
+        "sk4tzr"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "ЖИВОТНОВОД",
+      "themes": [
+        "biosphere"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "ЖИВОТНОЕ",
+      "themes": [
+        "biosphere"
+      ],
+      "sources": [
+        "harrix",
+        "sk4tzr"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "ЗАПОВЕДНИК",
+      "themes": [
+        "biosphere"
+      ],
+      "sources": [
+        "harrix",
+        "sk4tzr"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "ЗАРЯДКА",
+      "themes": [
+        "neon_city"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "ЗВЕЗДОЛЕТ",
+      "themes": [
+        "cosmos"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "ЗВЕЗДОПАД",
+      "themes": [
+        "cosmos"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "ЗВЕЗДОЧЕТ",
+      "themes": [
+        "cosmos"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "ИНДИКАТОР",
+      "themes": [
+        "neon_city"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "ИНФОРМАТИКА",
+      "themes": [
+        "cybercore"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "КАБЕЛЬЩИК",
+      "themes": [
+        "neon_city"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "КВАРТАЛ",
+      "themes": [
+        "neon_city"
+      ],
+      "sources": [
+        "crossslow",
+        "harrix",
+        "sk4tzr"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "КИБЕРНЕТИКА",
+      "themes": [
+        "cybercore"
+      ],
+      "sources": [
+        "harrix",
+        "sk4tzr"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "КЛАВИАТУРА",
+      "themes": [
+        "neon_city"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "КОДИРОВАНИЕ",
+      "themes": [
+        "cybercore"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "КОДИРОВКА",
+      "themes": [
+        "cybercore"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "КОМБИНАЦИЯ",
+      "themes": [
+        "cybercore"
+      ],
+      "sources": [
+        "harrix",
+        "sk4tzr"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "КОМЕТА",
+      "themes": [
+        "cosmos"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "КОМПИЛЯТОР",
+      "themes": [
+        "cybercore"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "КОМПЬЮТЕР",
+      "themes": [
+        "neon_city"
+      ],
+      "sources": [
+        "harrix",
+        "sk4tzr"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "КОНДУКТОР",
+      "themes": [
+        "neon_city"
+      ],
+      "sources": [
+        "harrix",
+        "sk4tzr"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "КОНСТАНТА",
+      "themes": [
+        "cybercore"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "КООРДИНАТА",
+      "themes": [
+        "cybercore"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "КОРАЛЛ",
+      "themes": [
+        "biosphere"
+      ],
+      "sources": [
+        "crossslow",
+        "harrix",
+        "sk4tzr"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "КОСМОДРОМ",
+      "themes": [
+        "cosmos"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "КОСМОЛОГ",
+      "themes": [
+        "cosmos"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "КОСМОЛОГИЯ",
+      "themes": [
+        "cosmos"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "КОСМОНАВТ",
+      "themes": [
+        "cosmos"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "КОСМОНАВТИКА",
+      "themes": [
+        "cosmos"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "КОСМОС",
+      "themes": [
+        "cosmos"
+      ],
+      "sources": [
+        "crossslow",
+        "harrix",
+        "sk4tzr"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "КРАТЕР",
+      "themes": [
+        "cosmos"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "КРОКОДИЛ",
+      "themes": [
+        "biosphere"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "ЛЕПЕСТОК",
+      "themes": [
+        "biosphere"
+      ],
+      "sources": [
+        "harrix",
+        "sk4tzr"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "ЛЕСНИЧЕСТВО",
+      "themes": [
+        "biosphere"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "ЛИСТВЕННИЦА",
+      "themes": [
+        "biosphere"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "ЛОГАРИФМ",
+      "themes": [
+        "cybercore"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "ЛОГИКА",
+      "themes": [
+        "cybercore"
+      ],
+      "sources": [
+        "crossslow",
+        "harrix",
+        "sk4tzr"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "ЛУНОХОД",
+      "themes": [
+        "cosmos"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "ЛЯГУШКА",
+      "themes": [
+        "biosphere"
+      ],
+      "sources": [
+        "crossslow",
+        "harrix",
+        "sk4tzr"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "МАГИСТРАЛЬ",
+      "themes": [
+        "neon_city"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "МАТЕМАТИКА",
+      "themes": [
+        "cybercore"
+      ],
+      "sources": [
+        "harrix",
+        "sk4tzr"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "МАТРИЦА",
+      "themes": [
+        "cybercore"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "МЕГАПОЛИС",
+      "themes": [
+        "neon_city"
+      ],
+      "sources": [
+        "harrix",
+        "sk4tzr"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "МЕДВЕДИЦА",
+      "themes": [
+        "biosphere"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "МЕРКУРИЙ",
+      "themes": [
+        "cosmos"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "МЕТЕОРИТ",
+      "themes": [
+        "cosmos"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "МЕТЕОСПУТНИК",
+      "themes": [
+        "cosmos"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "МИКРОФОН",
+      "themes": [
+        "neon_city"
+      ],
+      "sources": [
+        "harrix",
+        "sk4tzr"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "МОДУЛЯТОР",
+      "themes": [
+        "cybercore"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "МОДУЛЯЦИЯ",
+      "themes": [
+        "cybercore"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "МОНИТОР",
+      "themes": [
+        "neon_city"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "МОТОЦИКЛ",
+      "themes": [
+        "neon_city"
+      ],
+      "sources": [
+        "harrix",
+        "sk4tzr"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "МУРАВЕЙНИК",
+      "themes": [
+        "biosphere"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "НАВИГАТОР",
+      "themes": [
+        "neon_city"
+      ],
+      "sources": [
+        "harrix",
+        "sk4tzr"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "НАСЕКОМОЕ",
+      "themes": [
+        "biosphere"
+      ],
+      "sources": [
+        "harrix",
+        "sk4tzr"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "НЕБОСКРЕБ",
+      "themes": [
+        "neon_city"
+      ],
+      "sources": [
+        "harrix",
+        "sk4tzr"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "НЕВЕСОМОСТЬ",
+      "themes": [
+        "cosmos"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "НЕЙРОН",
+      "themes": [
+        "cybercore"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "ОБСЕРВАТОРИЯ",
+      "themes": [
+        "cosmos"
+      ],
+      "sources": [
+        "harrix",
+        "sk4tzr"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "ОДУВАНЧИК",
+      "themes": [
+        "biosphere"
+      ],
+      "sources": [
+        "harrix",
+        "sk4tzr"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "ОКЕАНОЛОГ",
+      "themes": [
+        "biosphere"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "ОПЕРАЦИЯ",
+      "themes": [
+        "cybercore"
+      ],
+      "sources": [
+        "harrix",
+        "sk4tzr"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "ОРБИТА",
+      "themes": [
+        "cosmos"
+      ],
+      "sources": [
+        "crossslow",
+        "harrix",
+        "sk4tzr"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "ПАМЯТЬ",
+      "themes": [
+        "cybercore"
+      ],
+      "sources": [
+        "crossslow",
+        "harrix",
+        "sk4tzr"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "ПАПОРОТНИК",
+      "themes": [
+        "biosphere"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "ПАРАМЕТР",
+      "themes": [
+        "cybercore"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "ПАССАЖИР",
+      "themes": [
+        "neon_city"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "ПЕРЕКРЕСТОК",
+      "themes": [
+        "neon_city"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "ПЛАНЕТА",
+      "themes": [
+        "cosmos"
+      ],
+      "sources": [
+        "crossslow",
+        "harrix",
+        "sk4tzr"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "ПЛАНЕТАРИЙ",
+      "themes": [
+        "cosmos"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "ПЛАНЕТОВЕД",
+      "themes": [
+        "cosmos"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "ПЛАНШЕТ",
+      "themes": [
+        "neon_city"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "ПЛАТФОРМА",
+      "themes": [
+        "cybercore"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "ПОДБЕРЕЗНИК",
+      "themes": [
+        "biosphere"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "ПОДЗЕМЕЛЬЕ",
+      "themes": [
+        "neon_city"
+      ],
+      "sources": [
+        "harrix",
+        "sk4tzr"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "ПОЛУПУСТЫНЯ",
+      "themes": [
+        "biosphere"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "ПОЛЯНА",
+      "themes": [
+        "biosphere"
+      ],
+      "sources": [
+        "crossslow",
+        "harrix",
+        "sk4tzr"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "ПРИРОДА",
+      "themes": [
+        "biosphere"
+      ],
+      "sources": [
+        "crossslow",
+        "harrix",
+        "sk4tzr"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "ПРОГРАММА",
+      "themes": [
+        "cybercore"
+      ],
+      "sources": [
+        "harrix",
+        "sk4tzr"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "ПРОГРАММИСТ",
+      "themes": [
+        "cybercore"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "ПРОСПЕКТ",
+      "themes": [
+        "neon_city"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "ПТИЦЕВОД",
+      "themes": [
+        "biosphere"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "РАДИОАНТЕННА",
+      "themes": [
+        "cosmos"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "РАДИОВОЛНА",
+      "themes": [
+        "cosmos"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "РАДИОЗОНД",
+      "themes": [
+        "cosmos"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "РАДИОЛОКАТОР",
+      "themes": [
+        "cosmos"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "РАДИОМАЯК",
+      "themes": [
+        "cosmos"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "РАДИОСТАНЦИЯ",
+      "themes": [
+        "neon_city"
+      ],
+      "sources": [
+        "harrix",
+        "sk4tzr"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "РАСТЕНИЕ",
+      "themes": [
+        "biosphere"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "РАСТЕНИЕВОД",
+      "themes": [
+        "biosphere"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "РАСШИФРОВКА",
+      "themes": [
+        "cybercore"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "РЕГИСТР",
+      "themes": [
+        "cybercore"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "РЕПТИЛИЯ",
+      "themes": [
+        "biosphere"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "РОМАШКА",
+      "themes": [
+        "biosphere"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "САВАННА",
+      "themes": [
+        "biosphere"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "СВЕТОФОР",
+      "themes": [
+        "neon_city"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "СЕКВОЙЯ",
+      "themes": [
+        "biosphere"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "СЕМЕНОВОД",
+      "themes": [
+        "biosphere"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "СИГНАЛИЗАЦИЯ",
+      "themes": [
+        "neon_city"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "СИМУЛЯЦИЯ",
+      "themes": [
+        "cybercore"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "СИНТЕЗАТОР",
+      "themes": [
+        "cybercore"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "СИСТЕМА",
+      "themes": [
+        "cybercore"
+      ],
+      "sources": [
+        "crossslow",
+        "harrix",
+        "sk4tzr"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "СИСТЕМАТИКА",
+      "themes": [
+        "cybercore"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "СКАФАНДР",
+      "themes": [
+        "cosmos"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "СНЕГОПАД",
+      "themes": [
+        "biosphere"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "СПУТНИК",
+      "themes": [
+        "cosmos"
+      ],
+      "sources": [
+        "crossslow",
+        "harrix",
+        "sk4tzr"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "СТАНЦИЯ",
+      "themes": [
+        "neon_city"
+      ],
+      "sources": [
+        "crossslow",
+        "harrix",
+        "sk4tzr"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "СТАТИСТИКА",
+      "themes": [
+        "cybercore"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "ТАЙГА",
+      "themes": [
+        "biosphere"
+      ],
+      "sources": [
+        "harrix",
+        "sk4tzr"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "ТЕЛЕСКОП",
+      "themes": [
+        "cosmos"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "ТЕЛЕФОН",
+      "themes": [
+        "neon_city"
+      ],
+      "sources": [
+        "crossslow",
+        "harrix",
+        "sk4tzr"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "ТЕХНОЛОГИЯ",
+      "themes": [
+        "cybercore"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "ТРАМВАЙ",
+      "themes": [
+        "neon_city"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "ТРАНЗИСТОР",
+      "themes": [
+        "cybercore"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "ТРАНСПОРТ",
+      "themes": [
+        "neon_city"
+      ],
+      "sources": [
+        "harrix",
+        "sk4tzr"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "ТРОЛЛЕЙБУС",
+      "themes": [
+        "neon_city"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "ТУМАННОСТЬ",
+      "themes": [
+        "cosmos"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "ТУНДРА",
+      "themes": [
+        "biosphere"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "ТУРНИКЕТ",
+      "themes": [
+        "neon_city"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "УРАВНЕНИЕ",
+      "themes": [
+        "cybercore"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "УРАН",
+      "themes": [
+        "cosmos"
+      ],
+      "sources": [
+        "crossslow",
+        "harrix",
+        "sk4tzr"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "ФЛАМИНГО",
+      "themes": [
+        "biosphere"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "ФОНАРИК",
+      "themes": [
+        "neon_city"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "ФОТОСИНТЕЗ",
+      "themes": [
+        "biosphere"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "ФУНКЦИЯ",
+      "themes": [
+        "cybercore"
+      ],
+      "sources": [
+        "crossslow",
+        "harrix",
+        "sk4tzr"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "ХАМЕЛЕОН",
+      "themes": [
+        "biosphere"
+      ],
+      "sources": [
+        "harrix",
+        "sk4tzr"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "ЦВЕТЕНИЕ",
+      "themes": [
+        "biosphere"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "ЦИФРОВКА",
+      "themes": [
+        "cybercore"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "ЧЕРЕПАХА",
+      "themes": [
+        "biosphere"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "ШИФРАТОР",
+      "themes": [
+        "cybercore"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "ШИФРОВАНИЕ",
+      "themes": [
+        "cybercore"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "ШИФРОГРАММА",
+      "themes": [
+        "cybercore"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "ЭКИПАЖ",
+      "themes": [
+        "cosmos"
+      ],
+      "sources": [
+        "crossslow",
+        "harrix",
+        "sk4tzr"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "ЭКЛИПТИКА",
+      "themes": [
+        "cosmos"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "ЭКОСИСТЕМА",
+      "themes": [
+        "biosphere"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "ЭКСКАВАТОР",
+      "themes": [
+        "neon_city"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "ЭКСПЕДИЦИЯ",
+      "themes": [
+        "cosmos"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "ЭЛЕКТРОНИКА",
+      "themes": [
+        "cybercore"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "ЭЛЕКТРОПОЕЗД",
+      "themes": [
+        "neon_city"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "ЭНТРОПИЯ",
+      "themes": [
+        "cybercore"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "ЭСКАЛАТОР",
+      "themes": [
+        "neon_city"
+      ],
+      "sources": [
+        "harrix",
+        "sk4tzr"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "ЭФЕМЕРИДА",
+      "themes": [
+        "cosmos"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "ЮПИТЕР",
+      "themes": [
+        "cosmos"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    },
+    {
+      "word": "ЯГОДНИЦА",
+      "themes": [
+        "biosphere"
+      ],
+      "sources": [
+        "harrix"
+      ],
+      "status": "experimental"
+    }
+  ]
+}

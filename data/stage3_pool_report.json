@@ -1,0 +1,47 @@
+{
+  "policy": "3 thematic anchors (8-12 letters) per level; remaining words from the CrossSlow game list intersected with sk4tzR (6-7 letters); max 2 uses per word",
+  "provenance": {
+    "thematic": "stage2 experimental_lexicon.json; manual theme shortlist; Harrix/CrossSlow source tags",
+    "general": "copied CrossSlow game_words.txt intersected with copied sk4tzR list; exclusions applied"
+  },
+  "general_count": 1140,
+  "general_by_length": {
+    "6": 618,
+    "7": 522
+  },
+  "thematic_count": {
+    "neon_city": 43,
+    "cosmos": 38,
+    "biosphere": 37,
+    "cybercore": 42
+  },
+  "thematic_by_length": {
+    "neon_city": {
+      "9": 14,
+      "12": 4,
+      "8": 9,
+      "11": 4,
+      "10": 12
+    },
+    "cosmos": {
+      "8": 6,
+      "11": 4,
+      "12": 5,
+      "10": 10,
+      "9": 13
+    },
+    "biosphere": {
+      "8": 19,
+      "9": 7,
+      "10": 6,
+      "11": 5
+    },
+    "cybercore": {
+      "11": 9,
+      "10": 16,
+      "8": 7,
+      "9": 10
+    }
+  },
+  "editorial_status": "experimental; no independent manual review completed"
+}
