@@ -10,8 +10,8 @@ void main() {
           .map((value) => FilwordLevel.fromJson(value as Map<String, dynamic>))
           .toList();
 
-  test('all 20 levels load with correct size and exact canonical coverage', () {
-    expect(levels.length, 20);
+  test('all 80 levels load with correct size and exact canonical coverage', () {
+    expect(levels.length, 80);
     final expected = {
       'neon_city': 7,
       'cosmos': 8,
@@ -80,7 +80,7 @@ void main() {
     );
   });
 
-  test('current 20 target lists have no shorter-word prefixes', () {
+  test('current 80 target lists have no shorter-word prefixes', () {
     for (final level in levels) {
       for (final first in level.words) {
         for (final second in level.words) {

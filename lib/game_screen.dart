@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:convert';
 import 'dart:math' as math;
 
@@ -5,23 +6,30 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import 'game_session.dart';
+import 'progress_store.dart';
+import 'ui/level_display.dart';
+import 'ui/world_game_background.dart';
 
 class GameScreen extends StatefulWidget {
   const GameScreen({
     super.key,
     this.levels,
     this.initialIndex = 0,
+    this.worldId,
+    this.progress,
     this.onCompleted,
   });
   final List<FilwordLevel>? levels;
   final int initialIndex;
+  final String? worldId;
+  final ProgressStore? progress;
   final void Function(BuildContext context, FilwordLevel level, int seconds)?
   onCompleted;
   @override
   State<GameScreen> createState() => _GameScreenState();
 }
 
-class _GameScreenState extends State<GameScreen> {
+class _GameScreenState extends State<GameScreen> with WidgetsBindingObserver {
   List<FilwordLevel>? levels;
   GameSession? session;
   int levelIndex = 0;
@@ -32,24 +40,65 @@ class _GameScreenState extends State<GameScreen> {
   bool dragging = false;
   bool dragConsumed = false;
   bool victoryShown = false;
-  final Stopwatch stopwatch = Stopwatch()..start();
+  final Stopwatch stopwatch = Stopwatch();
+  Timer? clockTimer;
+  int chargedSeconds = 0;
+  String? selectedHintWord;
+  bool pausedByDialog = false;
   String? message;
-  static const worldNames = {
-    'neon_city': 'Город',
-    'cosmos': 'Космос',
-    'biosphere': 'Природа',
-    'cybercore': 'Наука',
-  };
-
   @override
   void initState() {
     super.initState();
+    WidgetsBinding.instance.addObserver(this);
+    clockTimer = Timer.periodic(
+      const Duration(seconds: 1),
+      (_) => flushClock(),
+    );
     levelIndex = widget.initialIndex;
     if (widget.levels != null) {
       levels = widget.levels;
       session = GameSession(levels![levelIndex]);
+      restoreFound();
+      stopwatch.start();
     } else {
       load();
+    }
+  }
+
+  @override
+  void dispose() {
+    flushClock();
+    stopwatch.stop();
+    clockTimer?.cancel();
+    WidgetsBinding.instance.removeObserver(this);
+    super.dispose();
+  }
+
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    if (state == AppLifecycleState.resumed &&
+        !victoryShown &&
+        !pausedByDialog) {
+      stopwatch.start();
+    } else {
+      flushClock();
+      stopwatch.stop();
+    }
+  }
+
+  void flushClock() {
+    if (widget.progress == null || session == null || victoryShown) return;
+    final elapsed = stopwatch.elapsed.inSeconds;
+    final delta = elapsed - chargedSeconds;
+    if (delta <= 0) return;
+    chargedSeconds = elapsed;
+    unawaited(widget.progress!.addActiveSeconds(session!.level.worldId, delta));
+  }
+
+  void restoreFound() {
+    if (session == null || widget.progress == null) return;
+    for (final found in widget.progress!.restoredPaths(session!.level)) {
+      session!.submit(found.path);
     }
   }
 
@@ -62,22 +111,33 @@ class _GameScreenState extends State<GameScreen> {
     setState(() {
       levels = parsed;
       session = GameSession(parsed[levelIndex]);
+      restoreFound();
+      stopwatch.start();
     });
   }
 
-  void switchLevel(int index) => setState(() {
-    levelIndex = index % levels!.length;
-    session = GameSession(levels![levelIndex]);
-    gesture.clear();
-    lastPointer = null;
-    pointerStart = null;
-    activePointer = null;
-    dragging = false;
-    dragConsumed = false;
-    victoryShown = false;
-    stopwatch.reset();
-    message = null;
-  });
+  void switchLevel(int index) {
+    flushClock();
+    setState(() {
+      levelIndex = index % levels!.length;
+      session = GameSession(levels![levelIndex]);
+      if (widget.progress != null) {
+        unawaited(widget.progress!.clearFound(session!.level));
+      }
+      gesture.clear();
+      lastPointer = null;
+      pointerStart = null;
+      activePointer = null;
+      dragging = false;
+      dragConsumed = false;
+      victoryShown = false;
+      stopwatch.reset();
+      chargedSeconds = 0;
+      stopwatch.start();
+      selectedHintWord = null;
+      message = null;
+    });
+  }
 
   int? cellAt(Offset p, double size, int gridSize) {
     if (p.dx < 0 || p.dy < 0 || p.dx >= size || p.dy >= size) return null;
@@ -214,9 +274,143 @@ class _GameScreenState extends State<GameScreen> {
     message = 'Выбор очищен';
   });
 
+  Future<void> pauseGame() async {
+    flushClock();
+    stopwatch.stop();
+    pausedByDialog = true;
+    await showDialog<void>(
+      context: context,
+      builder: (dialogContext) => AlertDialog(
+        title: const Text('Пауза'),
+        content: const Text('Игровое время остановлено.'),
+        actions: [
+          TextButton(
+            onPressed: () {
+              Navigator.of(dialogContext).pop();
+              switchLevel(levelIndex);
+            },
+            child: const Text('Начать уровень заново'),
+          ),
+          TextButton(
+            onPressed: () => Navigator.of(dialogContext).pop(),
+            child: const Text('Продолжить'),
+          ),
+        ],
+      ),
+    );
+    pausedByDialog = false;
+    if (mounted && !victoryShown) stopwatch.start();
+  }
+
+  Future<void> showHints() async {
+    final level = session!.level;
+    final word = selectedHintWord;
+    if (widget.progress == null || word == null || session!.isFound(word)) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('Сначала выберите скрытое слово в списке'),
+        ),
+      );
+      return;
+    }
+    final target = level.words.firstWhere((item) => item.text == word);
+    final data = widget.progress!.world(level.worldId);
+    await showModalBottomSheet<void>(
+      context: context,
+      isScrollControlled: true,
+      builder: (sheetContext) => SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.all(20),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Text(
+                'Подсказка для слова из ${word.length} букв',
+                style: Theme.of(sheetContext).textTheme.titleLarge,
+              ),
+              const SizedBox(height: 6),
+              Row(
+                children: [
+                  const Icon(Icons.diamond_outlined, size: 20),
+                  const SizedBox(width: 6),
+                  Text('Баланс: ${widget.progress!.crystalBalance}'),
+                ],
+              ),
+              const SizedBox(height: 14),
+              FilledButton.icon(
+                onPressed: () async => purchaseHint(
+                  sheetContext,
+                  level,
+                  target.text,
+                  HintKind.start,
+                ),
+                icon: const Icon(Icons.place_outlined),
+                label: Text(
+                  data.hintStarts.contains(word)
+                      ? 'Показать начало снова · бесплатно'
+                      : 'Показать начало пути · 20 кристаллов',
+                ),
+              ),
+              const SizedBox(height: 8),
+              FilledButton.icon(
+                onPressed: () async => purchaseHint(
+                  sheetContext,
+                  level,
+                  target.text,
+                  HintKind.answer,
+                ),
+                icon: const Icon(Icons.visibility_outlined),
+                label: Text(
+                  data.hintAnswers.contains(word)
+                      ? 'Показать слово снова · бесплатно'
+                      : 'Открыть слово · 30 кристаллов',
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Future<void> purchaseHint(
+    BuildContext sheetContext,
+    FilwordLevel level,
+    String word,
+    HintKind kind,
+  ) async {
+    final purchase = await widget.progress!.buyHint(level, word, kind);
+    if (!mounted) return;
+    if (sheetContext.mounted) Navigator.of(sheetContext).pop();
+    setState(() {});
+    final text = purchase.insufficientFunds
+        ? 'Недостаточно кристаллов'
+        : purchase.applied
+        ? (kind == HintKind.start
+              ? 'Начало пути подсвечено'
+              : 'Слово открыто в списке')
+        : 'Подсказка недоступна';
+    ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(text)));
+  }
+
   void finish() {
     if (gesture.isEmpty) return;
     final result = session!.submit(List.of(gesture));
+    if (result.status == SelectionStatus.found &&
+        result.text == selectedHintWord) {
+      selectedHintWord = null;
+    }
+    if (result.status == SelectionStatus.found &&
+        !session!.completed &&
+        widget.progress != null) {
+      unawaited(
+        widget.progress!.recordFound(
+          session!.level,
+          FoundPath(result.text, result.selectedPath),
+        ),
+      );
+    }
     setState(() {
       gesture.clear();
       message = switch (result.status) {
@@ -228,6 +422,7 @@ class _GameScreenState extends State<GameScreen> {
       };
     });
     if (session!.completed && !victoryShown) {
+      flushClock();
       victoryShown = true;
       stopwatch.stop();
       WidgetsBinding.instance.addPostFrameCallback((_) {
@@ -235,7 +430,11 @@ class _GameScreenState extends State<GameScreen> {
           widget.onCompleted?.call(
             context,
             session!.level,
-            math.max(1, stopwatch.elapsed.inSeconds),
+            math.max(
+              1,
+              widget.progress?.world(session!.level.worldId).levelSeconds ??
+                  stopwatch.elapsed.inSeconds,
+            ),
           );
         }
       });
@@ -248,155 +447,226 @@ class _GameScreenState extends State<GameScreen> {
       return const Scaffold(body: Center(child: CircularProgressIndicator()));
     }
     final level = session!.level;
+    final light = Theme.of(context).brightness == Brightness.light;
+    final controlBackdrop = light
+        ? const Color(0xeaf3f9ff)
+        : const Color(0xc20d1930);
     return Scaffold(
       backgroundColor: Theme.of(context).brightness == Brightness.dark
           ? const Color(0xff080e24)
           : const Color(0xffe7f2ff),
       appBar: AppBar(
-        backgroundColor: const Color(0xff121b3a),
-        foregroundColor: const Color(0xffe9faff),
-        title: Text('${worldNames[level.worldId]} · ${level.id}'),
+        backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
+        foregroundColor: Theme.of(context).appBarTheme.foregroundColor,
+        title: Text(compactChapterLevelLabel(level)),
         centerTitle: true,
         actions: [
+          if (widget.progress != null)
+            Tooltip(
+              message: 'Подсказки',
+              child: TextButton.icon(
+                key: const Key('game-crystals'),
+                onPressed: showHints,
+                style: TextButton.styleFrom(
+                  foregroundColor: const Color(0xffffd166),
+                  padding: const EdgeInsets.symmetric(horizontal: 4),
+                ),
+                icon: const Icon(Icons.diamond_outlined, size: 22),
+                label: Text(
+                  '${widget.progress!.crystalBalance}',
+                  style: const TextStyle(fontWeight: FontWeight.w800),
+                ),
+              ),
+            ),
           IconButton(
-            tooltip: 'Начать уровень заново',
-            onPressed: () => switchLevel(levelIndex),
-            icon: const Icon(Icons.restart_alt),
+            tooltip: 'Пауза',
+            onPressed: pauseGame,
+            icon: const Icon(Icons.pause_circle_outline),
           ),
         ],
       ),
-      body: SafeArea(
-        child: LayoutBuilder(
-          builder: (context, box) {
-            final size = math.min(
-              math.min(box.maxWidth - 16, 480.0),
-              math.max(0.0, box.maxHeight - 200.0),
-            );
-            return Center(
-              child: SizedBox(
-                width: math.min(box.maxWidth, 500),
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 8),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.fromLTRB(4, 2, 4, 8),
-                        child: Text(
-                          'Найдено ${session!.foundCount} из ${level.words.length}   ·   Тест ${levelIndex + 1} из ${levels!.length}',
-                          style: const TextStyle(fontSize: 15),
+      body: WorldGameBackground(
+        worldId: widget.worldId ?? level.worldId,
+        child: SafeArea(
+          child: LayoutBuilder(
+            builder: (context, box) {
+              final size = math.min(
+                math.min(box.maxWidth - 16, 480.0),
+                math.max(0.0, box.maxHeight - 200.0),
+              );
+              return Center(
+                child: SizedBox(
+                  width: math.min(box.maxWidth, 500),
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 8),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      children: [
+                        Container(
+                          margin: const EdgeInsets.fromLTRB(4, 2, 4, 8),
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 8,
+                            vertical: 3,
+                          ),
+                          decoration: BoxDecoration(
+                            color: controlBackdrop,
+                            borderRadius: BorderRadius.circular(6),
+                          ),
+                          child: Text(
+                            'Найдено ${session!.foundCount} из ${level.words.length}',
+                            style: TextStyle(
+                              fontSize: 15,
+                              color: light
+                                  ? const Color(0xff152c45)
+                                  : Colors.white,
+                            ),
+                          ),
                         ),
-                      ),
-                      Center(
-                        child: SizedBox(
-                          width: size,
-                          height: size,
-                          child: Listener(
-                            behavior: HitTestBehavior.opaque,
-                            onPointerDown: pointerDown,
-                            onPointerMove: (e) => pointerMove(e, size),
-                            onPointerUp: (e) => pointerUp(e, size),
-                            onPointerCancel: pointerCancel,
-                            child: RepaintBoundary(
-                              key: const Key('game-board'),
-                              child: CustomPaint(
-                                painter: BoardPainter(
-                                  level: level,
-                                  found: session!.foundPaths,
-                                  active: gesture,
-                                  light:
-                                      Theme.of(context).brightness ==
-                                      Brightness.light,
+                        Center(
+                          child: SizedBox(
+                            width: size,
+                            height: size,
+                            child: Listener(
+                              behavior: HitTestBehavior.opaque,
+                              onPointerDown: pointerDown,
+                              onPointerMove: (e) => pointerMove(e, size),
+                              onPointerUp: (e) => pointerUp(e, size),
+                              onPointerCancel: pointerCancel,
+                              child: RepaintBoundary(
+                                key: const Key('game-board'),
+                                child: CustomPaint(
+                                  painter: BoardPainter(
+                                    level: level,
+                                    found: session!.foundPaths,
+                                    active: gesture,
+                                    hintStartCells: [
+                                      if (widget.progress != null)
+                                        for (final target in level.words)
+                                          if (widget.progress!
+                                                  .world(level.worldId)
+                                                  .hintStarts
+                                                  .contains(target.text) &&
+                                              !session!.isFound(target.text))
+                                            target.canonicalPath.first,
+                                    ],
+                                    light:
+                                        Theme.of(context).brightness ==
+                                        Brightness.light,
+                                  ),
                                 ),
                               ),
                             ),
                           ),
                         ),
-                      ),
-                      const SizedBox(height: 8),
-                      Text(
-                        message ?? 'Проведите или нажимайте на соседние буквы',
-                        key: const Key('status-message'),
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          color: session!.completed
-                              ? const Color(0xff69e5a2)
-                              : Colors.white70,
+                        const SizedBox(height: 8),
+                        Container(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 4,
+                            vertical: 2,
+                          ),
+                          decoration: BoxDecoration(
+                            color: controlBackdrop,
+                            borderRadius: BorderRadius.circular(6),
+                          ),
+                          child: Text(
+                            message ??
+                                'Проведите или нажимайте на соседние буквы',
+                            key: const Key('status-message'),
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              color: session!.completed
+                                  ? (light
+                                        ? const Color(0xff146d48)
+                                        : const Color(0xff69e5a2))
+                                  : (light
+                                        ? const Color(0xff152c45)
+                                        : Colors.white),
+                            ),
+                          ),
                         ),
-                      ),
-                      const SizedBox(height: 10),
-                      Expanded(
-                        child: SingleChildScrollView(
-                          key: const Key('word-list-scroll'),
-                          child: Padding(
-                            padding: const EdgeInsets.only(bottom: 12),
-                            child: Wrap(
-                              spacing: 6,
-                              runSpacing: 6,
-                              children: [
-                                for (final word in [
-                                  ...level.words.where(
-                                    (word) => !session!.isFound(word.text),
-                                  ),
-                                  ...session!.foundPaths.map(
-                                    (found) => level.words.firstWhere(
-                                      (word) => word.text == found.word,
+                        const SizedBox(height: 10),
+                        Expanded(
+                          child: SingleChildScrollView(
+                            key: const Key('word-list-scroll'),
+                            child: Padding(
+                              padding: const EdgeInsets.only(bottom: 12),
+                              child: Wrap(
+                                spacing: 6,
+                                runSpacing: 6,
+                                children: [
+                                  for (final word in [
+                                    ...level.words.where(
+                                      (word) => !session!.isFound(word.text),
                                     ),
-                                  ),
-                                ])
-                                  Chip(
-                                    label: Text(
-                                      word.text,
-                                      style: TextStyle(
-                                        fontSize: 13,
-                                        decoration: session!.isFound(word.text)
-                                            ? TextDecoration.lineThrough
-                                            : null,
+                                    ...session!.foundPaths.map(
+                                      (found) => level.words.firstWhere(
+                                        (word) => word.text == found.word,
                                       ),
                                     ),
-                                    backgroundColor: session!.isFound(word.text)
-                                        ? const Color(0xff234750)
-                                        : const Color(0xff252d41),
-                                    visualDensity: VisualDensity.compact,
-                                  ),
-                              ],
+                                  ])
+                                    InputChip(
+                                      showCheckmark: false,
+                                      avatar: session!.isFound(word.text)
+                                          ? const Icon(Icons.check, size: 16)
+                                          : null,
+                                      onPressed: session!.isFound(word.text)
+                                          ? null
+                                          : () => setState(
+                                              () =>
+                                                  selectedHintWord = word.text,
+                                            ),
+                                      selected:
+                                          selectedHintWord == word.text &&
+                                          !session!.isFound(word.text),
+                                      label: Text(
+                                        session!.isFound(word.text) ||
+                                                (widget.progress
+                                                        ?.world(level.worldId)
+                                                        .hintAnswers
+                                                        .contains(word.text) ??
+                                                    false)
+                                            ? word.text
+                                            : '${List.filled(word.text.length, '●').join(' ')} — ${word.text.length} букв',
+                                        style: TextStyle(
+                                          fontSize: 13,
+                                          decoration:
+                                              session!.isFound(word.text)
+                                              ? TextDecoration.lineThrough
+                                              : null,
+                                        ),
+                                      ),
+                                      backgroundColor:
+                                          session!.isFound(word.text)
+                                          ? (Theme.of(context).brightness ==
+                                                    Brightness.light
+                                                ? const Color(0xffbce8df)
+                                                : const Color(0xff234750))
+                                          : (Theme.of(context).brightness ==
+                                                    Brightness.light
+                                                ? const Color(0xffdbe8f7)
+                                                : const Color(0xff252d41)),
+                                      visualDensity: VisualDensity.compact,
+                                    ),
+                                ],
+                              ),
                             ),
                           ),
                         ),
-                      ),
-                      if (ambiguousShortWord) ...[
-                        FilledButton(
-                          onPressed: finish,
-                          child: const Text('Завершить короткое слово'),
-                        ),
-                        const SizedBox(height: 4),
-                      ],
-                      Row(
-                        children: [
-                          Expanded(
-                            child: OutlinedButton(
-                              onPressed: gesture.isEmpty
-                                  ? null
-                                  : clearSelection,
-                              child: const Text('Сбросить выбор'),
-                            ),
+                        if (ambiguousShortWord) ...[
+                          FilledButton(
+                            onPressed: finish,
+                            child: const Text('Завершить короткое слово'),
                           ),
-                          const SizedBox(width: 8),
-                          Expanded(
-                            child: OutlinedButton(
-                              onPressed: () => Navigator.of(context).maybePop(),
-                              child: const Text('На главную'),
-                            ),
-                          ),
+                          const SizedBox(height: 4),
                         ],
-                      ),
-                      const SizedBox(height: 8),
-                    ],
+                        const SizedBox(height: 8),
+                      ],
+                    ),
                   ),
                 ),
-              ),
-            );
-          },
+              );
+            },
+          ),
         ),
       ),
     );
@@ -409,11 +679,13 @@ class BoardPainter extends CustomPainter {
     required this.found,
     required this.active,
     required this.light,
+    this.hintStartCells = const [],
   });
   final FilwordLevel level;
   final List<FoundPath> found;
   final List<int> active;
   final bool light;
+  final List<int> hintStartCells;
   static const colors = [
     Color(0xff49d6e5),
     Color(0xffff9f68),
@@ -488,6 +760,19 @@ class BoardPainter extends CustomPainter {
           ),
         );
       }
+    }
+    for (final cell in hintStartCells) {
+      canvas.drawCircle(
+        Offset(
+          (cell % level.gridSize + .5) * unit,
+          (cell ~/ level.gridSize + .5) * unit,
+        ),
+        unit * .38,
+        Paint()
+          ..color = const Color(0xffffd166)
+          ..style = PaintingStyle.stroke
+          ..strokeWidth = 3,
+      );
     }
     canvas.drawRect(
       Rect.fromLTWH(1, 1, size.width - 2, size.height - 2),
