@@ -1,0 +1,45 @@
+{
+  "seed": 20261011,
+  "source_sha256": "8714cbf7429977fa9dcf8ecc421c2af7916c206908990d5fd36db521f4bc7283",
+  "path_rule": "horizontal and vertical neighbors only; turns allowed",
+  "candidates_per_level": 32,
+  "validation": {
+    "level_count": 80,
+    "accepted_count": 80,
+    "rejected_count": 0,
+    "by_world": {
+      "neon_city": 20,
+      "cosmos": 20,
+      "biosphere": 20,
+      "cybercore": 20
+    },
+    "defects": {}
+  },
+  "unique_words": 710,
+  "word_repetition": {
+    "1": 628,
+    "2": 82
+  },
+  "turns_by_world": {
+    "neon_city": {
+      "min": 10,
+      "max": 21,
+      "mean": 15.85
+    },
+    "cosmos": {
+      "min": 15,
+      "max": 27,
+      "mean": 21.15
+    },
+    "biosphere": {
+      "min": 18,
+      "max": 34,
+      "mean": 26.45
+    },
+    "cybercore": {
+      "min": 24,
+      "max": 42,
+      "mean": 32.45
+    }
+  }
+}

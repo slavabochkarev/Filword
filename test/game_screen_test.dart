@@ -36,12 +36,8 @@ void main() {
       (jsonDecode(File('assets/levels.json').readAsStringSync()) as List)
           .map((value) => FilwordLevel.fromJson(value as Map<String, dynamic>))
           .toList();
-  final legacy =
-      (jsonDecode(File('assets/levels_stage4.json').readAsStringSync()) as List)
-          .map((value) => FilwordLevel.fromJson(value as Map<String, dynamic>))
-          .toList();
   final alternatives = jsonDecode(
-    File('test/fixtures/alternative_examples.json').readAsStringSync(),
+    File('test/fixtures/orthogonal_examples.json').readAsStringSync(),
   ) as Map<String, dynamic>;
 
   test('each chapter displays local levels 1 through 100', () {
@@ -201,23 +197,35 @@ void main() {
   testWidgets('mouse alternative path crosses prior tap highlight', (
     tester,
   ) async {
-    final level = legacy.firstWhere((item) => item.id == 1);
+    final level = levels.firstWhere((item) => item.id == 3);
     await pumpGame(tester, [level]);
-    final example = alternatives['1'] as Map<String, dynamic>;
+    final example = alternatives['neon_city'] as Map<String, dynamic>;
     final alternate = (example['path'] as List).cast<int>();
+    final canonical = (example['canonical'] as List).cast<int>();
+    final target = level.words.firstWhere(
+      (word) => word.canonicalPath.join(',') == canonical.join(','),
+    );
     final other = level.words.firstWhere(
       (word) =>
-          word.text != example['word'] &&
+          word.text != target.text &&
           word.canonicalPath.any(alternate.contains),
     );
-    await tapPath(tester, other.canonicalPath, 10);
-    await dragPath(tester, alternate, 10, kind: ui.PointerDeviceKind.mouse);
+    await tapPath(tester, other.canonicalPath, 7);
+    await dragPath(tester, alternate, 7, kind: ui.PointerDeviceKind.mouse);
     expect(board(tester).found.length, 2);
     expect(board(tester).found.last.path, alternate);
     expect(
       board(tester).found.first.path.toSet().intersection(alternate.toSet()),
       isNotEmpty,
     );
+  });
+
+  testWidgets('diagonal tap and drag cannot add a cell', (tester) async {
+    await pumpGame(tester, [levels.first]);
+    await tapPath(tester, [0, 8], 7);
+    expect(board(tester).active, [0]);
+    await dragPath(tester, [0, 8], 7);
+    expect(board(tester).found, isEmpty);
   });
 
   testWidgets('prefix collision keeps longer word available', (tester) async {
@@ -416,7 +424,7 @@ void main() {
     );
     await tester.pumpAndSettle();
     expect(
-      find.text('Новых тестовых уровней в этом мире пока нет.'),
+      find.text('Новых уровней в этом мире пока нет.'),
       findsOneWidget,
     );
     expect(

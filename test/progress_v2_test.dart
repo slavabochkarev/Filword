@@ -13,6 +13,13 @@ void main() {
           .toList();
   final city = levels.where((item) => item.worldId == 'neon_city').toList();
   final cosmos = levels.where((item) => item.worldId == 'cosmos').toList();
+  final oldLevels =
+      (jsonDecode(
+            File('output_stage13/pre_orthogonal_levels.json')
+                .readAsStringSync(),
+          ) as List)
+          .map((item) => FilwordLevel.fromJson(item as Map<String, dynamic>))
+          .toList();
 
   test('legacy migration keeps five levels, unknown world times and one starter grant', () async {
     SharedPreferences.setMockInitialValues({
@@ -123,6 +130,54 @@ void main() {
     await store.completeLevel(city.first, 5);
     expect(store.restoredPaths(city.first), isEmpty);
   });
+
+  test(
+    'old diagonal save retains rewards and found words on new boards',
+    () async {
+      SharedPreferences.setMockInitialValues({});
+      final oldCity = oldLevels
+          .where((item) => item.worldId == 'neon_city')
+          .toList();
+      var store = await ProgressStore.load(levels: oldLevels);
+      await store.completeLevel(oldCity.first, 15);
+      final found = oldCity[1].words.first;
+      final hint = oldCity[1].words[1];
+      await store.recordFound(
+        oldCity[1],
+        FoundPath(found.text, found.canonicalPath),
+      );
+      await store.buyHint(oldCity[1], hint.text, HintKind.start);
+      final originalBalance = store.crystalBalance;
+      final originalWords = store.wordsFound;
+      final prefs = await SharedPreferences.getInstance();
+      final oldSnapshot = jsonDecode(
+        prefs.getString('poiskSlov.progress.v2')!,
+      ) as Map<String, dynamic>;
+      oldSnapshot.remove('levelContentRevision');
+      await prefs.setString('poiskSlov.progress.v2', jsonEncode(oldSnapshot));
+
+      store = await ProgressStore.load(levels: levels);
+      expect(
+        store.levelContentRevision,
+        ProgressStore.currentLevelContentRevision,
+      );
+      expect(store.currentIndex(city), 1);
+      expect(store.completedIds, contains(oldCity.first.id));
+      expect(store.wordsFound, originalWords);
+      expect(store.crystalBalance, originalBalance);
+      expect(store.world('neon_city').hintStarts, contains(hint.text));
+      final restored = store.restoredPaths(city[1]).single;
+      expect(restored.word, found.text);
+      expect(
+        GameSession(city[1]).submit(restored.path).status,
+        SelectionStatus.found,
+      );
+      final stablePath = List.of(restored.path);
+      store = await ProgressStore.load(levels: levels);
+      expect(store.restoredPaths(city[1]).single.path, stablePath);
+      expect(store.crystalBalance, originalBalance);
+    },
+  );
 
   test('achievements unlock once and keep their dates', () async {
     SharedPreferences.setMockInitialValues({});

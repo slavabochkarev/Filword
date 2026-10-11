@@ -8,6 +8,7 @@ import 'package:flutter/services.dart';
 import 'game_session.dart';
 import 'progress_store.dart';
 import 'ui/level_display.dart';
+import 'ui/hidden_word_label.dart';
 import 'ui/world_game_background.dart';
 
 class GameScreen extends StatefulWidget {
@@ -626,7 +627,7 @@ class _GameScreenState extends State<GameScreen> with WidgetsBindingObserver {
                                                         .contains(word.text) ??
                                                     false)
                                             ? word.text
-                                            : '${List.filled(word.text.length, '●').join(' ')} — ${word.text.length} букв',
+                                            : hiddenWordLabel(word.text),
                                         style: TextStyle(
                                           fontSize: 13,
                                           decoration:

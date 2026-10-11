@@ -46,7 +46,9 @@ void main() {
   test('adjacency respects row boundaries for every size', () {
     for (final size in [7, 8, 9, 10]) {
       expect(GameSession.adjacent(size - 1, size, size), isFalse);
-      expect(GameSession.adjacent(0, size + 1, size), isTrue);
+      expect(GameSession.adjacent(0, size + 1, size), isFalse);
+      expect(GameSession.adjacent(0, 1, size), isTrue);
+      expect(GameSession.adjacent(0, size, size), isTrue);
       expect(GameSession.adjacent(0, size * size, size), isFalse);
     }
   });
@@ -74,10 +76,8 @@ void main() {
     ) as List).first;
     final level = FilwordLevel.fromJson(old as Map<String, dynamic>);
     expect(level.gridSize, 10);
-    expect(
-      GameSession(level).submit(level.words.first.canonicalPath).status,
-      SelectionStatus.found,
-    );
+    // Historical JSON remains readable but uses the retired diagonal rules.
+    expect(level.words, isNotEmpty);
   });
 
   test('current 80 target lists have no shorter-word prefixes', () {

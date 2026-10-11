@@ -99,7 +99,7 @@ class GameSession {
     }
     final row = (first ~/ size - second ~/ size).abs();
     final col = (first % size - second % size).abs();
-    return row <= 1 && col <= 1;
+    return row + col == 1;
   }
 
   SelectionOutcome submit(List<int> path) {

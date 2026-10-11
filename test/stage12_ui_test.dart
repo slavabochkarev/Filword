@@ -6,6 +6,7 @@ import 'package:filword/game_screen.dart';
 import 'package:filword/game_session.dart';
 import 'package:filword/progress_store.dart';
 import 'package:filword/ui/achievements_page.dart';
+import 'package:filword/ui/hidden_word_label.dart';
 import 'package:filword/ui/neon_theme.dart';
 import 'package:filword/ui/stats_page.dart';
 import 'package:filword/ui/victory_screen.dart';
@@ -113,6 +114,12 @@ void main() {
     await tester.pumpAndSettle();
     final word = city.first.words.first.text;
     expect(find.text(word), findsNothing);
+    expect(find.text(hiddenWordLabel(word)), findsOneWidget);
+    expect(hiddenWordLabel(word), startsWith(word[0]));
+    expect(
+      hiddenWordLabel(word),
+      contains(List.filled(word.length - 1, '?').join()),
+    );
     expect(find.textContaining('букв'), findsWidgets);
     await expectLater(
       find.byType(GameScreen),

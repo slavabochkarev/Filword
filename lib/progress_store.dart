@@ -281,6 +281,7 @@ final achievementDefinitions = <AchievementDefinition>[
 class ProgressStore extends ChangeNotifier {
   ProgressStore._(this._prefs);
   static const _key = 'poiskSlov.progress.v2';
+  static const currentLevelContentRevision = 'orthogonal-v1';
   final SharedPreferences _prefs;
   Future<void> _writeQueue = Future<void>.value();
   final Map<String, WorldProgress> worlds = {
@@ -303,6 +304,7 @@ class ProgressStore extends ChangeNotifier {
   int levelRewardCount = 0;
   bool lightTheme = false;
   bool effectsEnabled = true;
+  String levelContentRevision = currentLevelContentRevision;
 
   static Future<ProgressStore> load({List<FilwordLevel>? levels}) async {
     final prefs = await SharedPreferences.getInstance();
@@ -312,6 +314,9 @@ class ProgressStore extends ChangeNotifier {
     final saved = prefs.getString(_key);
     if (saved != null) {
       store._read(jsonDecode(saved) as Map<String, dynamic>);
+      if (levels != null && store._reconcileLevelContent(levels)) {
+        await store._persist();
+      }
     } else {
       store._migrateLegacy(levels);
       await store._persist();
@@ -378,6 +383,8 @@ class ProgressStore extends ChangeNotifier {
     fastUnder30Count = value['fastUnder30Count'] as int? ?? 0;
     noHintLevels = value['noHintLevels'] as int? ?? 0;
     levelRewardCount = value['levelRewardCount'] as int? ?? 0;
+    levelContentRevision =
+        value['levelContentRevision'] as String? ?? 'diagonal-v1';
     for (final entry in (value['worlds'] as Map? ?? {}).entries) {
       if (worlds.containsKey(entry.key)) {
         worlds[entry.key as String] = WorldProgress.fromJson(
@@ -388,8 +395,36 @@ class ProgressStore extends ChangeNotifier {
     }
   }
 
+  bool _reconcileLevelContent(List<FilwordLevel> levels) {
+    if (levelContentRevision == currentLevelContentRevision) return false;
+    final byId = {for (final level in levels) level.id: level};
+    for (final world in worlds.values) {
+      final level = byId[world.activeLevelId];
+      if (level == null || level.worldId != world.id) continue;
+      final targets = {for (final target in level.words) target.text: target};
+      final restored = <String, List<int>>{};
+      for (final entry in world.foundPaths.entries) {
+        final target = targets[entry.key];
+        if (target == null) continue;
+        final result = GameSession(level).submit(entry.value);
+        restored[entry.key] =
+            result.status == SelectionStatus.found && result.text == entry.key
+            ? List.of(entry.value)
+            : List.of(target.canonicalPath);
+      }
+      world.foundPaths
+        ..clear()
+        ..addAll(restored);
+      world.hintStarts.removeWhere((word) => !targets.containsKey(word));
+      world.hintAnswers.removeWhere((word) => !targets.containsKey(word));
+    }
+    levelContentRevision = currentLevelContentRevision;
+    return true;
+  }
+
   Map<String, dynamic> _toJson() => {
     'version': 2,
+    'levelContentRevision': levelContentRevision,
     'completedIds': completedIds.toList()..sort(),
     'operations': operations.toList()..sort(),
     'pendingAchievements': pendingAchievements.toList(),
